@@ -8,13 +8,14 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://algo-snap-js.vercel.app/"),
     title: {
         template:
-            "%s | AlgoSnap（JavaScript編） スマホでアルゴリズムの基本を学ぼう",
-        default: "AlgoSnap（JavaScript編） スマホでアルゴリズムの基本を学ぼう",
+            "%s | AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル",
+        default:
+            "AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル",
     },
     description:
         "AlgoSnap（JavaScript編）でアルゴリズムの基本を学ぼう。スマホでできるので通勤などの隙間時間にサクッとできます。",
     openGraph: {
-        title: `%s | AlgoSnap（JavaScript編） スマホでアルゴリズムの基本を学ぼう`,
+        title: `%s | AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル`,
         description:
             "AlgoSnap（JavaScript編）でアルゴリズムの基本を学ぼう。スマホでできるので通勤などの隙間時間にサクッとできます。",
         images: ["/ogp.png"],

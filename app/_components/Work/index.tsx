@@ -1,5 +1,7 @@
 import type { Work } from "@/app/_libs/microcms";
 import styles from "./index.module.css";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type Props = {
     data: Work;
@@ -19,38 +21,30 @@ export default function Work({ data }: Props) {
             </div>
             <div className={styles.templateCode}>
                 <h2 className={styles.templateCodeTitle}>回答テンプレート</h2>
-                <p
-                    dangerouslySetInnerHTML={{
-                        __html: data.templateCode ?? "",
-                    }}
-                ></p>
+                <SyntaxHighlighter language="javascript" style={tomorrow}>
+                    {data.templateCode ?? ""}
+                </SyntaxHighlighter>
             </div>
             <div className={styles.answerCode}>
                 <h2 className={styles.answerCodeTitle}>回答コード01</h2>
-                <p
-                    dangerouslySetInnerHTML={{
-                        __html: data.answerCode01 ?? "",
-                    }}
-                ></p>
+                <SyntaxHighlighter language="javascript" style={tomorrow}>
+                    {data.answerCode01 ?? ""}
+                </SyntaxHighlighter>
             </div>
             {data.answerCode02 && (
                 <div className={styles.answerCode}>
                     <h2 className={styles.answerCodeTitle}>回答コード02</h2>
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: data.answerCode02,
-                        }}
-                    ></p>
+                    <SyntaxHighlighter language="javascript" style={tomorrow}>
+                        {data.answerCode02}
+                    </SyntaxHighlighter>
                 </div>
             )}
             {data.answerCode03 && (
                 <div className={styles.answerCode}>
                     <h2 className={styles.answerCodeTitle}>回答コード03</h2>
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: data.answerCode03,
-                        }}
-                    ></p>
+                    <SyntaxHighlighter language="javascript" style={tomorrow}>
+                        {data.answerCode03}
+                    </SyntaxHighlighter>
                 </div>
             )}
         </main>

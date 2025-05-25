@@ -1,0 +1,36 @@
+.title{
+    margin-bottom: 2em;
+}
+
+.description {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #000;
+}
+
+.descriptionTitle {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.templateCode {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #000;
+}
+
+.templateCodeTitle {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.answerCode {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #000;
+}
+
+.answerCodeTitle {
+    margin-bottom: 1em;
+    text-align: center;
+}

@@ -7,6 +7,15 @@ type Props = {
     data: Work;
 };
 
+// HTMLタグを除去し、<br>を改行に変換する関数
+const cleanCode = (code: string | null | undefined): string => {
+    if (!code) return "";
+    return code
+        .replace(/<br\s*\/?>/gi, "\n") // <br>タグを改行に変換
+        .replace(/<[^>]*>/g, "") // その他のHTMLタグを除去
+        .trim(); // 前後の空白を削除
+};
+
 export default function Work({ data }: Props) {
     return (
         <main>
@@ -22,20 +31,20 @@ export default function Work({ data }: Props) {
             <div className={styles.templateCode}>
                 <h2 className={styles.templateCodeTitle}>回答テンプレート</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {data.templateCode ?? ""}
+                    {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>
             </div>
             <div className={styles.answerCode}>
                 <h2 className={styles.answerCodeTitle}>回答コード01</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {data.answerCode01 ?? ""}
+                    {cleanCode(data.answerCode01)}
                 </SyntaxHighlighter>
             </div>
             {data.answerCode02 && (
                 <div className={styles.answerCode}>
                     <h2 className={styles.answerCodeTitle}>回答コード02</h2>
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {data.answerCode02}
+                        {cleanCode(data.answerCode02)}
                     </SyntaxHighlighter>
                 </div>
             )}
@@ -43,7 +52,7 @@ export default function Work({ data }: Props) {
                 <div className={styles.answerCode}>
                     <h2 className={styles.answerCodeTitle}>回答コード03</h2>
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {data.answerCode03}
+                        {cleanCode(data.answerCode03)}
                     </SyntaxHighlighter>
                 </div>
             )}

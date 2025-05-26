@@ -46,32 +46,22 @@ export default function Work({ data }: Props) {
                 <p>{data.answer01_desc}</p>
             </div>
             {data.answer02_code && (
-                <>
-                    <div className={styles.answerCode}>
-                        <h2 className={styles.answerCodeTitle}>解答コード02</h2>
-                        <SyntaxHighlighter
-                            language="javascript"
-                            style={tomorrow}
-                        >
-                            {cleanCode(data.answer02_code)}
-                        </SyntaxHighlighter>
-                        <p>{data.answer02_desc}</p>
-                    </div>
-                </>
+                <div className={styles.answerCode}>
+                    <h2 className={styles.answerCodeTitle}>解答コード02</h2>
+                    <SyntaxHighlighter language="javascript" style={tomorrow}>
+                        {cleanCode(data.answer02_code)}
+                    </SyntaxHighlighter>
+                    <p>{data.answer02_desc}</p>
+                </div>
             )}
             {data.answer03_code && (
-                <>
-                    <div className={styles.answerCode}>
-                        <h2 className={styles.answerCodeTitle}>解答コード03</h2>
-                        <SyntaxHighlighter
-                            language="javascript"
-                            style={tomorrow}
-                        >
-                            {cleanCode(data.answer03_code)}
-                        </SyntaxHighlighter>
-                        <p>{data.answer03_desc}</p>
-                    </div>
-                </>
+                <div className={styles.answerCode}>
+                    <h2 className={styles.answerCodeTitle}>解答コード02</h2>
+                    <SyntaxHighlighter language="javascript" style={tomorrow}>
+                        {cleanCode(data.answer02_code)}
+                    </SyntaxHighlighter>
+                    <p>{data.answer02_desc}</p>
+                </div>
             )}
         </main>
     );

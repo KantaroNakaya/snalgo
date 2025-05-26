@@ -1,3 +1,5 @@
+"use client";
+
 import type { Work } from "@/app/_libs/microcms";
 import styles from "./index.module.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";

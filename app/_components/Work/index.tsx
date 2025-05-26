@@ -37,11 +37,7 @@ export default function Work({ data }: Props) {
             <h1 className={styles.title}>{data.title}</h1>
             <div className={styles.description}>
                 <h2 className={styles.descriptionTitle}>問題</h2>
-                <p
-                    dangerouslySetInnerHTML={{
-                        __html: data.description ?? "",
-                    }}
-                ></p>
+                <p>{data.description}</p>
             </div>
             <div className={styles.templateCode}>
                 <h2 className={styles.templateCodeTitle}>解答テンプレート</h2>

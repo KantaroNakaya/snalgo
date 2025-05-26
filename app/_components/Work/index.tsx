@@ -2,8 +2,13 @@
 
 import type { Work } from "@/app/_libs/microcms";
 import styles from "./index.module.css";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import dynamic from "next/dynamic";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+const SyntaxHighlighter = dynamic(
+    () => import("react-syntax-highlighter").then((mod) => mod.Prism),
+    { ssr: false }
+);
 
 type Props = {
     data: Work;

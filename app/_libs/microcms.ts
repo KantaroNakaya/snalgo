@@ -18,9 +18,12 @@ export type Work = {
     description: string;
     content: string;
     templateCode: string;
-    answerCode01: string;
-    answerCode02: string;
-    answerCode03: string;
+    answer01_code: string;
+    answer01_desc: string;
+    answer02_code: string;
+    answer02_desc: string;
+    answer03_code: string;
+    answer03_desc: string;
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {

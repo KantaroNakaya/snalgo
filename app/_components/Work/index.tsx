@@ -34,24 +34,37 @@ export default function Work({ data }: Props) {
             <div className={styles.answerCode}>
                 <h2 className={styles.answerCodeTitle}>解答コード01</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {cleanCode(data.answerCode01)}
+                    {cleanCode(data.answer01_code)}
                 </SyntaxHighlighter>
+                <p>{data.answer01_desc}</p>
             </div>
-            {data.answerCode02 && (
-                <div className={styles.answerCode}>
-                    <h2 className={styles.answerCodeTitle}>解答コード02</h2>
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {cleanCode(data.answerCode02)}
-                    </SyntaxHighlighter>
-                </div>
+            {data.answer02_code && (
+                <>
+                    <div className={styles.answerCode}>
+                        <h2 className={styles.answerCodeTitle}>解答コード02</h2>
+                        <SyntaxHighlighter
+                            language="javascript"
+                            style={tomorrow}
+                        >
+                            {cleanCode(data.answer02_code)}
+                        </SyntaxHighlighter>
+                        <p>{data.answer02_desc}</p>
+                    </div>
+                </>
             )}
-            {data.answerCode03 && (
-                <div className={styles.answerCode}>
-                    <h2 className={styles.answerCodeTitle}>解答コード03</h2>
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {cleanCode(data.answerCode03)}
-                    </SyntaxHighlighter>
-                </div>
+            {data.answer03_code && (
+                <>
+                    <div className={styles.answerCode}>
+                        <h2 className={styles.answerCodeTitle}>解答コード03</h2>
+                        <SyntaxHighlighter
+                            language="javascript"
+                            style={tomorrow}
+                        >
+                            {cleanCode(data.answer03_code)}
+                        </SyntaxHighlighter>
+                        <p>{data.answer03_desc}</p>
+                    </div>
+                </>
             )}
         </main>
     );

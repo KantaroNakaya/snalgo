@@ -4,6 +4,7 @@ import type { Work } from "@/app/_libs/microcms";
 import styles from "./index.module.css";
 import dynamic from "next/dynamic";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useEffect, useState } from "react";
 
 const SyntaxHighlighter = dynamic(
     () => import("react-syntax-highlighter").then((mod) => mod.Prism),
@@ -21,6 +22,16 @@ const cleanCode = (code: string | null | undefined): string => {
 };
 
 export default function Work({ data }: Props) {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    if (!isClient) {
+        return null;
+    }
+
     return (
         <main>
             <h1 className={styles.title}>{data.title}</h1>

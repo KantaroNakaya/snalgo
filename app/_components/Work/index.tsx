@@ -10,13 +10,7 @@ type Props = {
 // HTMLタグを除去し、<br>やエスケープされたタグを改行に変換する関数
 const cleanCode = (code: string | null | undefined): string => {
     if (!code) return "";
-    return code
-        .replace(/&lt;br\s*\/??&gt;/gi, "\n") // &lt;br&gt; → 改行
-        .replace(/&lt;/g, "<") // &lt; → <
-        .replace(/&gt;/g, ">") // &gt; → >
-        .replace(/<br\s*\/?>/gi, "\n") // <br> → 改行
-        .replace(/<[^>]*>/g, "") // その他のHTMLタグを除去
-        .trim(); // 前後の空白を削除
+    return code.replace(/\\n/g, "\n");
 };
 
 export default function Work({ data }: Props) {

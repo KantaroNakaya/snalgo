@@ -26,20 +26,20 @@ export default function Work({ data }: Props) {
                 ></p>
             </div>
             <div className={styles.templateCode}>
-                <h2 className={styles.templateCodeTitle}>回答テンプレート</h2>
+                <h2 className={styles.templateCodeTitle}>解答テンプレート</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>
             </div>
             <div className={styles.answerCode}>
-                <h2 className={styles.answerCodeTitle}>回答コード01</h2>
+                <h2 className={styles.answerCodeTitle}>解答コード01</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(data.answerCode01)}
                 </SyntaxHighlighter>
             </div>
             {data.answerCode02 && (
                 <div className={styles.answerCode}>
-                    <h2 className={styles.answerCodeTitle}>回答コード02</h2>
+                    <h2 className={styles.answerCodeTitle}>解答コード02</h2>
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
                         {cleanCode(data.answerCode02)}
                     </SyntaxHighlighter>
@@ -47,7 +47,7 @@ export default function Work({ data }: Props) {
             )}
             {data.answerCode03 && (
                 <div className={styles.answerCode}>
-                    <h2 className={styles.answerCodeTitle}>回答コード03</h2>
+                    <h2 className={styles.answerCodeTitle}>解答コード03</h2>
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
                         {cleanCode(data.answerCode03)}
                     </SyntaxHighlighter>

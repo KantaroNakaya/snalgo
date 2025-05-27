@@ -63,11 +63,11 @@ export default function Work({ data }: Props) {
             )}
             {data.answer03_code && (
                 <div className={styles.answerCode}>
-                    <h2 className={styles.answerCodeTitle}>解答コード02</h2>
+                    <h2 className={styles.answerCodeTitle}>解答コード03</h2>
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {cleanCode(data.answer02_code)}
+                        {cleanCode(data.answer03_code)}
                     </SyntaxHighlighter>
-                    <p>{data.answer02_desc}</p>
+                    <p>{data.answer03_desc}</p>
                 </div>
             )}
         </main>

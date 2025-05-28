@@ -1,6 +1,5 @@
 import Image from "next/image";
-import styles from "./index.module.css";
-import Date from "../Date";
+import Date from "./Date";
 import { News } from "@/app/_libs/microcms";
 import Link from "next/link";
 
@@ -10,16 +9,21 @@ type Props = {
 
 export default function NewsList({ news }: Props) {
     if (news.length === 0) {
-        return <p>記事がありません。</p>;
+        return <p className="text-gray-600">記事がありません。</p>;
     }
     return (
-        <ul>
+        <ul className="space-y-4">
             {news.map((article) => (
-                <li key={article.id} className={styles.list}>
-                    <Link href={`/news/${article.id}`} className={styles.link}>
-                        <dl className={styles.content}>
-                            <dt className={styles.title}>{article.title}</dt>
-                            <dd className={styles.meta}>
+                <li key={article.id} className="border-b border-gray-200 pb-4">
+                    <Link
+                        href={`/news/${article.id}`}
+                        className="block hover:bg-gray-50 p-4 rounded-lg transition-colors"
+                    >
+                        <dl>
+                            <dt className="text-xl font-bold mb-2">
+                                {article.title}
+                            </dt>
+                            <dd>
                                 <Date
                                     date={
                                         article.publishedAt ?? article.createdAt

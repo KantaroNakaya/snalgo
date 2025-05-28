@@ -1,6 +1,5 @@
 import type { News } from "@/app/_libs/microcms";
-import Date from "../Date";
-import styles from "./index.module.css";
+import Date from "./Date";
 
 type Props = {
     data: News;
@@ -9,13 +8,13 @@ type Props = {
 export default function Article({ data }: Props) {
     return (
         <main>
-            <h1 className={styles.title}>{data.title}</h1>
-            <p className={styles.description}>{data.description}</p>
-            <div className={styles.meta}>
+            <h1 className="text-2xl font-bold mb-4">{data.title}</h1>
+            <p className="text-gray-600 mb-4">{data.description}</p>
+            <div className="mb-6">
                 <Date date={data.publishedAt ?? data.createdAt} />
             </div>
             <div
-                className={styles.content}
+                className="prose max-w-none"
                 dangerouslySetInnerHTML={{
                     __html: data.content ?? "",
                 }}

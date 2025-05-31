@@ -32,11 +32,11 @@ export default function Menu({ onClose }: Props) {
                     </li>
                     <li>
                         <Link
-                            href="/works"
+                            href="/workbook"
                             className="hover:text-gray-900"
                             onClick={onClose}
                         >
-                            WORKS
+                            WORKBOOK
                         </Link>
                     </li>
                     <li>

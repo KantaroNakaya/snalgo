@@ -6,9 +6,15 @@ type Props = {
     perPage: number;
 };
 
-export default function Pagination({ totalCount, currentPage, perPage }: Props) {
-    const range = (start: number, end: number) =>
-        [...Array(end - start + 1)].map((_, i) => start + i);
+export default function Pagination({
+    totalCount,
+    currentPage,
+    perPage,
+}: Props) {
+    const range = (start: number, end: number) => {
+        if (start > end) return [];
+        return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+    };
 
     const pages = Math.ceil(totalCount / perPage);
     const pageNumbers = range(1, pages);

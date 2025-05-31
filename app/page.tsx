@@ -11,33 +11,22 @@ export default async function Home() {
         limit: TOP_NEWS_LIMIT,
     });
     return (
-        <>
-            <section className="relative flex items-center justify-center bg-black/50 text-white overflow-hidden py-32 md:py-24">
+        <div className="bg-black/90 text-white">
+            <section className="flex items-center justify-center overflow-hidden py-32">
                 <div>
-                    <h1 className="text-5xl font-bold text-center mb-4 md:text-3xl md:text-left">
-                        AlgoSnap（JavaScript編）
+                    <h1 className="text-5xl text-center">
+                        <span className="block font-bold mb-4 text-2xl">AlgoSnap（JavaScript編）</span>
+                        <span className="block text-sm">スマホでサクッと学べるアルゴリズム基礎ドリル</span>
                     </h1>
-                    <p className="text-center md:text-left md:text-sm">
-                        スマホでサクッと学べるアルゴリズム基礎ドリル
-                    </p>
                 </div>
-                <Image
-                    className="absolute top-0 right-0 w-full h-full object-cover object-right -z-10"
-                    src="/img-mv.jpg"
-                    alt=""
-                    width={4000}
-                    height={1200}
-                    priority
-                    sizes="100vw"
-                />
             </section>
-            <section className="relative bg-white max-w-4xl mx-auto px-10 py-6 rounded-[var(--border-radius)] md:px-6 md:py-4">
+            <section className="max-w-4xl mx-auto px-10 py-6">
                 <h2 className="text-2xl">News</h2>
                 <NewsList news={data.contents} />
                 <div className="flex justify-end mt-4">
                     <ButtonLink href="/news">もっとみる</ButtonLink>
                 </div>
             </section>
-        </>
+        </div>
     );
 }

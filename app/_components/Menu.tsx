@@ -20,11 +20,11 @@ export default function Menu({ onClose }: Props) {
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                <ul className="flex flex-col items-center justify-center h-full space-y-8">
+                <ul className="flex flex-col items-center justify-center h-full space-y-8 text-black">
                     <li>
                         <Link
                             href="/"
-                            className="text-gray-600 hover:text-gray-900"
+                            className="hover:text-gray-900"
                             onClick={onClose}
                         >
                             HOME
@@ -32,17 +32,8 @@ export default function Menu({ onClose }: Props) {
                     </li>
                     <li>
                         <Link
-                            href="/news"
-                            className="text-gray-600 hover:text-gray-900"
-                            onClick={onClose}
-                        >
-                            NEWS
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
                             href="/works"
-                            className="text-gray-600 hover:text-gray-900"
+                            className="hover:text-gray-900"
                             onClick={onClose}
                         >
                             WORKS
@@ -50,8 +41,17 @@ export default function Menu({ onClose }: Props) {
                     </li>
                     <li>
                         <Link
+                            href="/news"
+                            className="hover:text-gray-900"
+                            onClick={onClose}
+                        >
+                            NEWS
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
                             href="/contact"
-                            className="text-gray-600 hover:text-gray-900"
+                            className="hover:text-gray-900"
                             onClick={onClose}
                         >
                             CONTACT

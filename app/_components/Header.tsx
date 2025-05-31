@@ -7,14 +7,7 @@ export default function Header() {
         <header className="bg-white shadow-sm">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link href="/" className="block">
-                    <Image
-                        src="/logo.svg"
-                        alt="SIMPLE"
-                        className="h-8 w-auto"
-                        width={348}
-                        height={133}
-                        priority
-                    />
+                    <p className="text-2xl font-bold">AlgoSnap</p>
                 </Link>
                 <Menu />
             </div>

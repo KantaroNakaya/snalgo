@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Work from "@/app/_components/Work";
 import ButtonLink from "@/app/_components/ButtonLink";
 import { getWorkDetail } from "@/app/_libs/microcms";
-import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
 type Props ={
@@ -35,7 +34,7 @@ export default async function Page({params,searchParams}: Props){
     return(
         <>
             <Work data={data}/>
-            <div className={styles.footer}>
+            <div>
                 <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
             </div>
         </>

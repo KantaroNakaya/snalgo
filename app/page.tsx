@@ -8,7 +8,6 @@ import ButtonLink from "./_components/ButtonLink";
 export const revalidate = 60;
 
 export default async function Home() {
-    const name = "nakaya";
     const data = await getNewsList({
         limit: TOP_NEWS_LIMIT,
     });
@@ -16,8 +15,8 @@ export default async function Home() {
         <>
             <section className={styles.top}>
                 <div>
-                    <h1 className={styles.title}>コーポレートサイトサンプル</h1>
-                    <p className={styles.description}>{name}が作る</p>
+                    <h1 className={styles.title}>AlgoSnap（JavaScript編）</h1>
+                    <p className={styles.description}>スマホでサクッと学べるアルゴリズム基礎ドリル</p>
                 </div>
                 <Image
                     className={styles.bgimg}

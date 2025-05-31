@@ -11,16 +11,20 @@ export default async function Home() {
         limit: TOP_NEWS_LIMIT,
     });
     return (
-        <div className="bg-black/90 text-white">
+        <div>
             <section className="flex items-center justify-center overflow-hidden py-32">
                 <div>
                     <h1 className="text-5xl text-center">
-                        <span className="block font-bold mb-4 text-2xl">AlgoSnap（JavaScript編）</span>
-                        <span className="block text-sm">スマホでサクッと学べるアルゴリズム基礎ドリル</span>
+                        <span className="block font-bold mb-4 text-2xl md:text-4xl">
+                            AlgoSnap（JavaScript編）
+                        </span>
+                        <span className="block text-sm md:text-xl">
+                            スマホでサクッと学べるアルゴリズム基礎ドリル
+                        </span>
                     </h1>
                 </div>
             </section>
-            <section className="max-w-4xl mx-auto px-10 py-6">
+            <section className="max-w-3xl mx-auto px-10 py-6">
                 <h2 className="text-2xl">News</h2>
                 <NewsList news={data.contents} />
                 <div className="flex justify-end mt-4">

@@ -16,11 +16,11 @@ export default function Menu({ onClose }: Props) {
     return (
         <div>
             <nav
-                className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ${
+                className={`fixed inset-0 z-50 transform transition-transform duration-300 ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                <ul className="flex flex-col items-center justify-center h-full space-y-8 text-black">
+                <ul className="flex flex-col items-center justify-center h-full space-y-8 bg-[var(--color-bg-sub)] text-[var(--color-text-sub)]">
                     <li>
                         <Link
                             href="/"

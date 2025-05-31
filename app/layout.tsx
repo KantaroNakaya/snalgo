@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ja">
-            <body>
+            <body className="bg-[var(--color-bg-main)] text-[var(--color-text-main)]">
                 <Header />
                 {children}
                 <Footer />

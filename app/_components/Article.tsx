@@ -8,11 +8,11 @@ type Props = {
 export default function Article({ data }: Props) {
     return (
         <main>
-            <h1 className="text-2xl font-bold mb-4">{data.title}</h1>
-            <p className="text-gray-600 mb-4">{data.description}</p>
-            <div className="mb-6">
+            <div className="mb-6 flex items-center justify-between">
+                <h1 className="text-2xl font-bold">{data.title}</h1>
                 <Date date={data.publishedAt ?? data.createdAt} />
             </div>
+            <p className="mb-4">{data.description}</p>
             <div
                 className="prose max-w-none"
                 dangerouslySetInnerHTML={{

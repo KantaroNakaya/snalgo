@@ -7,7 +7,7 @@ type Props = {
 
 export default function Hero({ title, sub }: Props) {
     return (
-        <section className="h-[60vh] min-h-[400px] flex items-center bg-black/90">
+        <section className="h-[60vh] min-h-[400px] flex items-center">
             <div className="max-w-7xl mx-auto px-4">
                 <h1 className="text-4xl font-bold text-white mb-4">
                     {title}

@@ -10,17 +10,14 @@ module.exports = {
             colors: {
                 "text-main": "var(--color-text-main)",
                 "text-sub": "var(--color-text-sub)",
-                "text-unpainted": "var(--color-text-unpainted)",
                 "text-error": "var(--color-text-error)",
                 "bg-main": "var(--color-bg-main)",
                 "bg-sub": "var(--color-bg-sub)",
                 "bg-code": "var(--color-bg-code)",
-                "bg-painted": "var(--color-bg-painted)",
                 "border-dark": "var(--color-border-dark)",
-                border: "var(--color-border)",
                 "border-light": "var(--color-border-light)",
-                current: "var(--color-current)",
                 "button-primary": "var(--color-button-primary)",
+                "current": "var(--color-current)",
             },
             borderRadius: {
                 DEFAULT: "var(--border-radius)",

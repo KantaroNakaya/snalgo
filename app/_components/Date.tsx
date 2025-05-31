@@ -7,7 +7,7 @@ type Props = {
 
 export default function Date({ date }: Props) {
     return (
-        <span className="inline-flex items-center gap-2 text-gray-600">
+        <span className="inline-flex items-center gap-2">
             <Image
                 src="/clock.svg"
                 alt=""

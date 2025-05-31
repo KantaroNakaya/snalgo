@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
 import { getNewsDetail } from "@/app/_libs/microcms";
-import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
 type Props ={
@@ -36,7 +35,7 @@ export default async function Page({params,searchParams}: Props){
     return(
         <>
             <Article data={data}/>
-            <div className={styles.footer}>
+            <div className="text-center mt-10">
                 <ButtonLink href="/news">ニュース一覧へ</ButtonLink>
             </div>
         </>

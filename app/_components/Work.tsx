@@ -32,11 +32,11 @@ export default function Work({ data }: Props) {
     }
 
     return (
-        <main className="max-w-4xl mx-auto">
+        <main className="max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold mb-8">{data.title}</h1>
             <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">問題</h2>
-                <p className="text-gray-700">{data.description}</p>
+                <p>{data.description}</p>
             </div>
             <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">解答テンプレート</h2>
@@ -49,7 +49,7 @@ export default function Work({ data }: Props) {
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(data.answer01_code)}
                 </SyntaxHighlighter>
-                <p className="mt-4 text-gray-700">{data.answer01_desc}</p>
+                <p className="mt-4">{data.answer01_desc}</p>
             </div>
             {data.answer02_code && (
                 <div className="mb-8">
@@ -57,7 +57,7 @@ export default function Work({ data }: Props) {
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
                         {cleanCode(data.answer02_code)}
                     </SyntaxHighlighter>
-                    <p className="mt-4 text-gray-700">{data.answer02_desc}</p>
+                    <p className="mt-4">{data.answer02_desc}</p>
                 </div>
             )}
             {data.answer03_code && (
@@ -66,7 +66,7 @@ export default function Work({ data }: Props) {
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
                         {cleanCode(data.answer03_code)}
                     </SyntaxHighlighter>
-                    <p className="mt-4 text-gray-700">{data.answer03_desc}</p>
+                    <p className="mt-4">{data.answer03_desc}</p>
                 </div>
             )}
         </main>

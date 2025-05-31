@@ -34,7 +34,7 @@ export default async function Page({params,searchParams}: Props){
     return(
         <>
             <Work data={data}/>
-            <div>
+            <div className="text-center mt-10">
                 <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
             </div>
         </>

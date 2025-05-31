@@ -22,7 +22,7 @@ export default function ContactForm() {
 
     if (state.status === "success") {
         return (
-            <p className="text-green-600 text-center py-4">
+            <p className="text-center py-4">
                 お問い合わせいただき、ありがとうございます。
                 <br />
                 お返事まで今しばらくお待ちください。
@@ -32,14 +32,14 @@ export default function ContactForm() {
     return (
         <form
             action={formAction}
-            className="max-w-2xl mx-auto space-y-6"
+            className="space-y-6"
             onSubmit={handleSubmit}
         >
             <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                     <label
                         htmlFor="lastname"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium"
                     >
                         姓
                     </label>
@@ -53,7 +53,7 @@ export default function ContactForm() {
                 <div className="space-y-2">
                     <label
                         htmlFor="firstname"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium"
                     >
                         名
                     </label>
@@ -68,7 +68,7 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label
                     htmlFor="company"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium"
                 >
                     会社名
                 </label>
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium"
                 >
                     メールアドレス
                 </label>
@@ -96,7 +96,7 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium"
                 >
                     メッセージ
                 </label>

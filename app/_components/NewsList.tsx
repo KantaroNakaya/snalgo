@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Date from "./Date";
 import { News } from "@/app/_libs/microcms";
 import Link from "next/link";
@@ -17,7 +16,7 @@ export default function NewsList({ news }: Props) {
                 <li key={article.id} className="border-b border-gray-200 pb-4">
                     <Link
                         href={`/news/${article.id}`}
-                        className="block hover:bg-gray-50 p-4 rounded-lg transition-colors"
+                        className="block hover:bg-gray-90 p-4 rounded-lg transition-colors"
                     >
                         <dl>
                             <dt className="text-xl font-bold mb-2">

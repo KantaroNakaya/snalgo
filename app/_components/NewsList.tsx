@@ -11,7 +11,7 @@ export default function NewsList({ news }: Props) {
         return <p className="text-gray-600">記事がありません。</p>;
     }
     return (
-        <ul className="space-y-4">
+        <ul className="space-y-4 mt-10">
             {news.map((article) => (
                 <li key={article.id} className="border-b border-gray-200 pb-4">
                     <Link

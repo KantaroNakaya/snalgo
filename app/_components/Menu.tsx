@@ -20,11 +20,11 @@ export default function Menu({ onClose }: Props) {
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                <ul className="flex flex-col items-center justify-center h-full space-y-8 bg-[var(--color-bg-sub)] text-[var(--color-text-sub)]">
+                <ul className="flex flex-col items-center justify-center h-full space-y-8 bg-bg-sub text-text-sub">
                     <li>
                         <Link
                             href="/"
-                            className="hover:text-gray-900"
+                            className="hover:bg-bg-main hover:text-text-main p-4"
                             onClick={close}
                         >
                             HOME
@@ -33,7 +33,7 @@ export default function Menu({ onClose }: Props) {
                     <li>
                         <Link
                             href="/workbook"
-                            className="hover:text-gray-900"
+                            className="hover:bg-bg-main hover:text-text-main p-4"
                             onClick={close}
                         >
                             WORKBOOK
@@ -42,7 +42,7 @@ export default function Menu({ onClose }: Props) {
                     <li>
                         <Link
                             href="/news"
-                            className="hover:text-gray-900"
+                            className="hover:bg-bg-main hover:text-text-main p-4"
                             onClick={close}
                         >
                             NEWS
@@ -51,7 +51,7 @@ export default function Menu({ onClose }: Props) {
                     <li>
                         <Link
                             href="/contact"
-                            className="hover:text-gray-900"
+                            className="hover:bg-bg-main hover:text-text-main p-4"
                             onClick={close}
                         >
                             CONTACT
@@ -59,7 +59,7 @@ export default function Menu({ onClose }: Props) {
                     </li>
                 </ul>
                 <button
-                    className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full"
+                    className="absolute top-4 right-4 p-2 rounded-full hover:bg-bg-sub2"
                     onClick={close}
                 >
                     <Image
@@ -72,7 +72,7 @@ export default function Menu({ onClose }: Props) {
                 </button>
             </nav>
             <button
-                className="p-2 hover:bg-gray-100 rounded-full"
+                className="p-2 rounded-full hover:bg-bg-sub"
                 onClick={open}
             >
                 <Image src="/menu.svg" alt="メニュー" width={24} height={24} />

@@ -13,7 +13,7 @@ module.exports = {
                 "text-error": "var(--color-text-error)",
                 "bg-main": "var(--color-bg-main)",
                 "bg-sub": "var(--color-bg-sub)",
-                "bg-code": "var(--color-bg-code)",
+                "bg-sub2": "var(--color-bg-sub2)",
                 "border-dark": "var(--color-border-dark)",
                 "border-light": "var(--color-border-light)",
                 "button-primary": "var(--color-button-primary)",

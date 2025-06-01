@@ -25,7 +25,7 @@ export default function Menu({ onClose }: Props) {
                         <Link
                             href="/"
                             className="hover:text-gray-900"
-                            onClick={onClose}
+                            onClick={close}
                         >
                             HOME
                         </Link>
@@ -34,7 +34,7 @@ export default function Menu({ onClose }: Props) {
                         <Link
                             href="/workbook"
                             className="hover:text-gray-900"
-                            onClick={onClose}
+                            onClick={close}
                         >
                             WORKBOOK
                         </Link>
@@ -43,7 +43,7 @@ export default function Menu({ onClose }: Props) {
                         <Link
                             href="/news"
                             className="hover:text-gray-900"
-                            onClick={onClose}
+                            onClick={close}
                         >
                             NEWS
                         </Link>
@@ -52,7 +52,7 @@ export default function Menu({ onClose }: Props) {
                         <Link
                             href="/contact"
                             className="hover:text-gray-900"
-                            onClick={onClose}
+                            onClick={close}
                         >
                             CONTACT
                         </Link>

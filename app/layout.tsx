@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         title: `%s | AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル`,
         description:
             "AlgoSnap（JavaScript編）でアルゴリズムの基本を学ぼう。スマホでできるので通勤などの隙間時間にサクッとできます。",
-        images: ["/ogp.png"],
+        images: ["/ogp.jpg"],
     },
     alternates: {
         canonical: `http://localhost:3000`,

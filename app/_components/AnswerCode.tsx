@@ -43,15 +43,19 @@ export default function AnswerCode({
             </div>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-bg-sub text-text-sub mb-4 px-4 py-2 rounded-md"
+                className="bg-bg-sub text-text-sub mb-4 px-4 py-2 rounded-md transition-all duration-300 hover:bg-opacity-80"
             >
-                {isOpen ? "答えを隠す" : "答えをみる"}
+                {isOpen ? "答えを隠す" : "答えを確認する"}
             </button>
-            {isOpen && (
+            <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(code)}
                 </SyntaxHighlighter>
-            )}
+            </div>
         </div>
     );
 }

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import AnswerCode from "./AnswerCode";
 
 const SyntaxHighlighter = dynamic(
     () => import("react-syntax-highlighter").then((mod) => mod.Prism),
@@ -45,64 +46,21 @@ export default function Work({ data }: Props) {
                     {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>
             </div>
-            <div className="mb-16">
-                <h2 className="text-xl font-bold mb-4">解答コード01</h2>
-                <div className="mb-4 border-l-4 border-primary">
-                    <p className="flex items-center gap-1">
-                        <Image
-                            src="/icon-hint.png"
-                            alt=""
-                            width={40}
-                            height={40}
-                        />
-                        <span className="text-sm font-bold">ヒント</span>
-                    </p>
-                    <p className="pl-4 mt-4">{data.answer01_desc}</p>
-                </div>
-                <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {cleanCode(data.answer01_code)}
-                </SyntaxHighlighter>
-            </div>
-            {data.answer02_code && (
-                <div className="mb-16">
-                    <h2 className="text-xl font-bold mb-4">解答コード02</h2>
-                    <div className="mb-4 border-l-4 border-primary">
-                        <p className="flex items-center gap-1">
-                            <Image
-                                src="/icon-hint.png"
-                                alt=""
-                                width={40}
-                                height={40}
-                            />
-                            <span className="text-sm font-bold">ヒント</span>
-                        </p>
-                        <p className="pl-4 mt-4">{data.answer02_desc}</p>
-                    </div>
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {cleanCode(data.answer02_code)}
-                    </SyntaxHighlighter>
-                </div>
-            )}
-            {data.answer03_code && (
-                <div className="mb-16">
-                    <h2 className="text-xl font-bold mb-4">解答コード03</h2>
-                    <div className="mb-4 border-l-4 border-primary">
-                        <p className="flex items-center gap-1">
-                            <Image
-                                src="/icon-hint.png"
-                                alt=""
-                                width={40}
-                                height={40}
-                            />
-                            <span className="text-sm font-bold">ヒント</span>
-                        </p>
-                        <p className="pl-4 mt-4">{data.answer03_desc}</p>
-                    </div>
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {cleanCode(data.answer03_code)}
-                    </SyntaxHighlighter>
-                </div>
-            )}
+            <AnswerCode
+                number={1}
+                code={data.answer01_code}
+                description={data.answer01_desc}
+            />
+            <AnswerCode
+                number={2}
+                code={data.answer02_code}
+                description={data.answer02_desc}
+            />
+            <AnswerCode
+                number={3}
+                code={data.answer03_code}
+                description={data.answer03_desc}
+            />
         </main>
     );
 }

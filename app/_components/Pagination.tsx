@@ -28,7 +28,7 @@ export default function Pagination({
                         className={`block w-10 h-10 leading-10 text-center border rounded ${
                             currentPage === page
                                 ? "bg-gray-900 text-white"
-                                : "text-gray-600 hover:bg-gray-100"
+                                : "text-white hover:bg-gray-100 hover:text-gray-900"
                         }`}
                     >
                         {page}

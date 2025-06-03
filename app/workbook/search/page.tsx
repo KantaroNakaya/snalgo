@@ -1,25 +1,30 @@
-import NewsList from "@/app/_components/NewsList";
+import WorkList from "@/app/_components/WorkList";
 import SearchField from "@/app/_components/SearchField";
-import { NEWS_LIST_LIMIT } from "@/app/_constants";
-import { getNewsList } from "@/app/_libs/microcms";
-
+import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
+import { getWorkList } from "@/app/_libs/microcms";
+import { notFound } from "next/navigation";
 
 type Props = {
     searchParams: {
-        q?:string;
+        q?: string;
     };
 };
 
-export default async function Page( {searchParams } : Props) {
-    const { contents: news } = await getNewsList({
-        limit: NEWS_LIST_LIMIT,
-        q: searchParams.q,
-    });
+export default async function Page({ searchParams }: Props) {
+    try {
+        const { contents: work } = await getWorkList({
+            limit: WORKBOOK_LIST_LIMIT,
+            q: searchParams.q,
+        });
 
-    return(
-        <>
-            <SearchField />
-            <NewsList news={news} />
-        </>
-    )
+        return (
+            <>
+                <SearchField />
+                <WorkList workbook={work} />
+            </>
+        );
+    } catch (error) {
+        console.error("Error fetching work list:", error);
+        notFound();
+    }
 }

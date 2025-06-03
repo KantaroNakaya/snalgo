@@ -1,5 +1,4 @@
 import { getNewsList } from "@/app/_libs/microcms";
-import Article from "@/app/_components/Article";
 import NewsList from "@/app/_components/NewsList";
 import { notFound } from "next/navigation";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
@@ -30,7 +29,7 @@ export default async function Page({params}: Props){
     return (
         <>
             <NewsList news={news} />
-            <Pagination totalCount={totalCount} current={current}/>
+            <Pagination totalCount={totalCount} currentPage={current} perPage={NEWS_LIST_LIMIT} basePath="/news" />
         </>
     )
 }

@@ -4,12 +4,14 @@ type Props = {
     totalCount: number;
     currentPage: number;
     perPage: number;
+    basePath: string;
 };
 
 export default function Pagination({
     totalCount,
     currentPage,
     perPage,
+    basePath,
 }: Props) {
     const range = (start: number, end: number) => {
         if (start > end) return [];
@@ -24,7 +26,7 @@ export default function Pagination({
             {pageNumbers.map((page) => (
                 <li key={page}>
                     <Link
-                        href={`/workbook/page/${page}`}
+                        href={`${basePath}/page/${page}`}
                         className={`block w-10 h-10 leading-10 text-center border rounded ${
                             currentPage === page
                                 ? "bg-gray-900 text-white"

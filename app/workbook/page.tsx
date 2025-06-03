@@ -12,7 +12,7 @@ export default async function Page() {
         <>
             <SearchField />
             <WorkList workbook={workbook} />
-            <Pagination totalCount={totalCount} currentPage={1} perPage={WORKBOOK_LIST_LIMIT} />
+            <Pagination totalCount={totalCount} currentPage={1} perPage={WORKBOOK_LIST_LIMIT} basePath="/workbook" />
         </>
     );
 }

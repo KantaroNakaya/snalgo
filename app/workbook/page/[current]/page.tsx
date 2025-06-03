@@ -33,6 +33,7 @@ export default async function Page({ params }: Props) {
                 totalCount={totalCount}
                 currentPage={current}
                 perPage={WORKBOOK_LIST_LIMIT}
+                basePath="/workbook"
             />
         </>
     );

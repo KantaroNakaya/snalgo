@@ -29,7 +29,12 @@ export default async function Page({params}: Props){
     return (
         <>
             <NewsList news={news} />
-            <Pagination totalCount={totalCount} currentPage={current} perPage={NEWS_LIST_LIMIT} basePath="/news" />
+            <Pagination
+                totalCount={totalCount}
+                currentPage={current}
+                perPage={NEWS_LIST_LIMIT}
+                basePath="/news"
+            />
         </>
-    )
+    );
 }

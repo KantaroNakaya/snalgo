@@ -31,7 +31,7 @@ export default function AnswerCode({
 
     return (
         <div className="mb-16">
-            <h2 className="text-xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4">
                 解答コード{String(number).padStart(2, "0")}
             </h2>
             <div className="mb-8 border-l-4 border-primary">

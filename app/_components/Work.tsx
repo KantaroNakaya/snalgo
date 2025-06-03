@@ -4,7 +4,6 @@ import type { Work } from "@/app/_libs/microcms";
 import dynamic from "next/dynamic";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import AnswerCode from "./AnswerCode";
 
 const SyntaxHighlighter = dynamic(
@@ -37,11 +36,13 @@ export default function Work({ data }: Props) {
         <main className="max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold mb-8">{data.title}</h1>
             <div className="mb-8">
-                <h2 className="text-xl font-bold mb-4">問題</h2>
-                <p>{data.description}</p>
+                <h2 className="text-2xl font-bold mb-4">問題</h2>
+                <p className="text-lg">
+                    <span className="border-b">{data.description}</span>
+                </p>
             </div>
             <div className="mb-16">
-                <h2 className="text-xl font-bold mb-4">解答テンプレート</h2>
+                <h2 className="text-2xl font-bold mb-4">解答テンプレート</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>

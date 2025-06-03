@@ -24,7 +24,7 @@ export default function Pagination({
             {pageNumbers.map((page) => (
                 <li key={page}>
                     <Link
-                        href={`/news/page/${page}`}
+                        href={`/workbook/page/${page}`}
                         className={`block w-10 h-10 leading-10 text-center border rounded ${
                             currentPage === page
                                 ? "bg-gray-900 text-white"

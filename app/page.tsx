@@ -19,21 +19,33 @@ export default async function Home() {
             </section>
             <section>
                 <p className="max-w-3xl mx-auto px-10 py-8 text-center">
-                    <span className="text-2xl font-bold">スマホでサクッと学べる</span><br />
-                    <span className="text-2xl font-bold">アルゴリズム基礎ドリル</span>
+                    <span className="text-2xl font-bold">
+                        スマホでサクッと学べる
+                    </span>
+                    <br />
+                    <span className="text-2xl font-bold">
+                        アルゴリズム基礎ドリル
+                    </span>
                 </p>
                 <div className="max-w-3xl mx-auto px-10 py-8">
                     <Image src="/illust.png" alt="" width={300} height={300} />
                 </div>
                 <div className="flex flex-col gap-8 max-w-3xl mx-auto px-10 py-16">
-                    <p className="text-2xl font-bold">腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。</p>
-                    <p className="text-2xl font-bold">しかし、腰を据えていない時間もある。その時間を有効活用したい。</p>
-                    <p className="text-2xl font-bold">そんな時におすすめなのが、AlgoSnapです。</p>
+                    <p className="text-2xl font-bold">
+                        腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。
+                    </p>
+                    <p className="text-2xl font-bold">
+                        しかし、腰を据えていない時間もある。その時間を有効活用したい。
+                    </p>
+                    <p className="text-2xl font-bold">
+                        そんな時におすすめなのが、AlgoSnapです。
+                    </p>
                 </div>
             </section>
             <section className="flex flex-col items-center gap-4 p-6">
-                <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
-                <ButtonLink href="/news">お知らせ一覧へ</ButtonLink>
+                <ButtonLink href="/concept">コンセプト</ButtonLink>
+                <ButtonLink href="/workbook">問題一覧</ButtonLink>
+                <ButtonLink href="/news">お知らせ一覧</ButtonLink>
             </section>
         </div>
     );

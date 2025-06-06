@@ -32,6 +32,15 @@ export default function Menu({ onClose }: Props) {
                     </li>
                     <li>
                         <Link
+                            href="/concept"
+                            className="hover:bg-bg-main hover:text-text-main p-4"
+                            onClick={close}
+                        >
+                            CONCEPT
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
                             href="/workbook"
                             className="hover:bg-bg-main hover:text-text-main p-4"
                             onClick={close}

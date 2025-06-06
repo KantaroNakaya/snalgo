@@ -13,6 +13,8 @@ const SyntaxHighlighter = dynamic(
 
 type Props = {
     data: Work;
+    prevWorkId?: string;
+    nextWorkId?: string;
 };
 
 // HTMLタグを除去し、<br>やエスケープされたタグを改行に変換する関数
@@ -21,7 +23,7 @@ const cleanCode = (code: string | null | undefined): string => {
     return code.replace(/\\n/g, "\n");
 };
 
-export default function Work({ data }: Props) {
+export default function Work({ data, prevWorkId, nextWorkId }: Props) {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -47,21 +49,42 @@ export default function Work({ data }: Props) {
                     {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>
             </div>
-            <AnswerCode
-                number={1}
-                code={data.answer01_code}
-                description={data.answer01_desc}
-            />
-            <AnswerCode
-                number={2}
-                code={data.answer02_code}
-                description={data.answer02_desc}
-            />
-            <AnswerCode
-                number={3}
-                code={data.answer03_code}
-                description={data.answer03_desc}
-            />
+            <div className="mb-16">
+                <h2 className="text-2xl font-bold mb-4">解答コード</h2>
+                <AnswerCode
+                    number={1}
+                    code={data.answer01_code}
+                    description={data.answer01_desc}
+                />
+                <AnswerCode
+                    number={2}
+                    code={data.answer02_code}
+                    description={data.answer02_desc}
+                />
+                <AnswerCode
+                    number={3}
+                    code={data.answer03_code}
+                    description={data.answer03_desc}
+                />
+            </div>
+            <div className="flex justify-between mt-8">
+                {prevWorkId && (
+                    <a
+                        href={`/workbook/${prevWorkId}`}
+                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                    >
+                        前の問題
+                    </a>
+                )}
+                {nextWorkId && (
+                    <a
+                        href={`/workbook/${nextWorkId}`}
+                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                    >
+                        次の問題
+                    </a>
+                )}
+            </div>
         </main>
     );
 }

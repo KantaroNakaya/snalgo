@@ -7,7 +7,7 @@ export default function ButtonLink({ href, children }: Props) {
     return (
         <a
             href={href}
-            className="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="block bg-blue-700 text-white hover:bg-opacity-80 transition-all duration-300 py-2"
         >
             {children}
         </a>

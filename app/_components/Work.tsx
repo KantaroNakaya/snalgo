@@ -67,11 +67,11 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                     description={data.answer03_desc}
                 />
             </div>
-            <div className="flex justify-between mt-8">
+            <div className="grid grid-cols-2 gap-4 mt-8">
                 {prevWorkId && (
                     <a
                         href={`/workbook/${prevWorkId}`}
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                        className="bg-blue-700 text-white hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
                         前の問題
                     </a>
@@ -79,7 +79,7 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                 {nextWorkId && (
                     <a
                         href={`/workbook/${nextWorkId}`}
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                        className="bg-blue-700 text-white hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
                         次の問題
                     </a>

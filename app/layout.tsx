@@ -37,7 +37,7 @@ export default function RootLayout({
                 {children}
                 <Footer />
             </body>
-            <GoogleTagManager gtmId="GTM-KQJ4KX4V" />
+            <GoogleTagManager gtmId="GTM-WK2KH6VZ" />
         </html>
     );
 }

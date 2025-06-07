@@ -25,6 +25,8 @@ const cleanCode = (code: string | null | undefined): string => {
 
 export default function Work({ data, prevWorkId, nextWorkId }: Props) {
     const [isClient, setIsClient] = useState(false);
+    const [isAnswerHowtoOpen, setIsAnswerHowtoOpen] = useState(false);
+    const [isAnswerAboutOpen, setIsAnswerAboutOpen] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
@@ -43,14 +45,63 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                     <span className="border-b">{data.description}</span>
                 </p>
             </div>
-            <div className="mb-16">
+            <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">解答テンプレート</h2>
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(data.templateCode)}
                 </SyntaxHighlighter>
             </div>
+            <div
+                className="mb-4 border border-white-400 p-2 rounded-md cursor-pointer"
+                onClick={() => setIsAnswerHowtoOpen(!isAnswerHowtoOpen)}
+            >
+                <h2 className="text-l font-bold flex justify-between items-center">
+                    解答方法について
+                    <span className="text-sm">
+                        {isAnswerHowtoOpen ? "▲" : "▼"}
+                    </span>
+                </h2>
+                <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        isAnswerHowtoOpen ? "max-h-40" : "max-h-0"
+                    }`}
+                >
+                    <ul className="text-sm text-white-400 mt-4">
+                        <li className="py-2">
+                            解答テンプレートの「ここに書くコードを考えてください」に当てはまるコードを考えてください。
+                        </li>
+                        <li className="py-2">
+                            繰り返し取り組むことで考え方の型を身につけることができます。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                className="mb-4 border border-white-400 p-2 rounded-md cursor-pointer"
+                onClick={() => setIsAnswerAboutOpen(!isAnswerAboutOpen)}
+            >
+                <h2 className="text-l font-bold flex justify-between items-center">
+                    解答コードについて
+                    <span className="text-sm">
+                        {isAnswerAboutOpen ? "▲" : "▼"}
+                    </span>
+                </h2>
+                <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        isAnswerAboutOpen ? "max-h-40" : "max-h-0"
+                    }`}
+                >
+                    <ul className="text-sm text-white-400 mt-4">
+                        <li className="py-2">
+                            解答コード01では、自らアルゴリズムを考えることを促すヒントと解答を用意しています。
+                        </li>
+                        <li className="py-2">
+                            解答コード02や03では、メソッドを用いて簡略なソースコードで実装できる解答を用意しています。
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div className="mb-16">
-                <h2 className="text-xl font-bold mb-4">解答コード</h2>
                 <AnswerCode
                     number={1}
                     code={data.answer01_code}

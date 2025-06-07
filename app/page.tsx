@@ -27,10 +27,8 @@ export default async function Home() {
                         アルゴリズム基礎ドリル
                     </span>
                 </p>
-                <div className="max-w-3xl mx-auto px-10 py-8">
-                    <Image src="/illust.png" alt="" width={300} height={300} />
-                </div>
-                <div className="flex flex-col gap-8 max-w-3xl mx-auto px-10 py-16">
+                <Image className="mx-auto" src="/illust.png" alt="" width={300} height={300} />
+                <div className="flex flex-col gap-8 max-w-xl mx-auto px-10 py-16">
                     <p className="text-2xl font-bold">
                         腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。
                     </p>

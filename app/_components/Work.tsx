@@ -86,21 +86,33 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                 />
             </div>
             <div className="grid grid-cols-2 gap-4 mt-8">
-                {prevWorkId && (
+                {prevWorkId ? (
                     <a
                         href={`/workbook/${prevWorkId}`}
-                        className="bg-blue-700 text-white hover:bg-opacity-80 transition-all duration-300 text-center py-2"
+                        className="bg-blue-700 hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
-                        前の問題
+                        <span className="text-sm text-white">前の問題</span>
                     </a>
+                ) : (
+                    <p className="bg-gray-500 cursor-not-allowed transition-all duration-300 text-center py-2">
+                        <span className="text-sm text-white line-through">
+                            前の問題
+                        </span>
+                    </p>
                 )}
-                {nextWorkId && (
+                {nextWorkId ? (
                     <a
                         href={`/workbook/${nextWorkId}`}
-                        className="bg-blue-700 text-white hover:bg-opacity-80 transition-all duration-300 text-center py-2"
+                        className="bg-blue-700 hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
-                        次の問題
+                        <span className="text-sm text-white">次の問題</span>
                     </a>
+                ) : (
+                    <p className="bg-gray-500 cursor-not-allowed transition-all duration-300 text-center py-2">
+                        <span className="text-sm text-white line-through">
+                            次の問題
+                        </span>
+                    </p>
                 )}
             </div>
         </main>

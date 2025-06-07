@@ -53,9 +53,7 @@ export default async function Page({ params, searchParams }: Props) {
     return (
         <>
             <Work data={data} prevWorkId={prevWorkId} nextWorkId={nextWorkId} />
-            <div className="text-center mt-10">
-                <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
-            </div>
+            <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
         </>
     );
 }

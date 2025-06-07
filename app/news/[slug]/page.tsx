@@ -35,9 +35,7 @@ export default async function Page({params,searchParams}: Props){
     return(
         <>
             <Article data={data}/>
-            <div className="text-center mt-10">
-                <ButtonLink href="/news">ニュース一覧へ</ButtonLink>
-            </div>
+            <ButtonLink href="/news">ニュース一覧へ</ButtonLink>
         </>
     )
 }

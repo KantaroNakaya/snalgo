@@ -43,7 +43,9 @@ export default function AnswerCode({
             </div>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-red-500 text-main mb-4 px-4 py-2 rounded-md transition-all duration-300 hover:bg-opacity-80"
+                className={`${
+                    isOpen ? "bg-gray-500 text-white" : "bg-red-500 text-main"
+                } mb-4 px-4 py-2 rounded-md transition-all duration-300 hover:bg-opacity-80`}
             >
                 {isOpen ? "答えを隠す" : "答えを確認する"}
             </button>

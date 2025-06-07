@@ -8,7 +8,7 @@ type Props = {
 export default function Article({ data }: Props) {
     return (
         <main>
-            <div className="mb-6 flex items-center justify-between">
+            <div className="mb-6">
                 <h1 className="text-2xl font-bold">{data.title}</h1>
                 <Date date={data.publishedAt ?? data.createdAt} />
             </div>

@@ -3,6 +3,7 @@ import NewsList from "@/app/_components/NewsList";
 import { notFound } from "next/navigation";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
 import Pagination from "@/app/_components/Pagination";
+import Hero from "@/app/_components/Hero";
 
 type Props ={
     params: {
@@ -28,6 +29,7 @@ export default async function Page({params}: Props){
 
     return (
         <>
+            <Hero title="News" sub="ニュース" />
             <NewsList news={news} />
             <Pagination
                 totalCount={totalCount}

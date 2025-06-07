@@ -3,6 +3,7 @@ import WorkList from "@/app/_components/WorkList";
 import { notFound } from "next/navigation";
 import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
 import Pagination from "@/app/_components/Pagination";
+import Hero from "@/app/_components/Hero";
 
 type Props = {
     params: {
@@ -28,6 +29,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <>
+            <Hero title="Workbook" sub="ワークブック" />
             <WorkList workbook={work} />
             <Pagination
                 totalCount={totalCount}

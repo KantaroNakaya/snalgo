@@ -56,47 +56,47 @@
     },
     {
         "title": "Q6. 配列をソートせよ",
-        "description": "整数配列を昇順にソートする関数 `sortArray` を作成してください。バブルソートを使用してください。",
+        "description": "整数配列を小さい順に並び替える関数 `sortArray` を作成してください。隣り合う2つの数を比較して、大きい方を右に移動させる方法を使ってください。",
         "templateCode": "function sortArray(arr) {\n  // ここに書くコードを考えてください\n}",
         "answer01_code": "const result = [...arr];\nfor (let i = 0; i < result.length - 1; i++) {\n  for (let j = 0; j < result.length - i - 1; j++) {\n    if (result[j] > result[j + 1]) {\n      const temp = result[j];\n      result[j] = result[j + 1];\n      result[j + 1] = temp;\n    }\n  }\n}\nreturn result;",
-        "answer01_desc": "バブルソート実装",
+        "answer01_desc": "隣り合う数を比較して交換",
         "answer02_code": "return arr.sort((a, b) => a - b);",
         "answer02_desc": "sortメソッド使用",
         "answer03_code": "",
         "answer03_desc": ""
     },
     {
-        "title": "Q7. 二分探索",
-        "description": "ソート済みの整数配列から特定の値を探す関数 `binarySearch` を作成してください。",
-        "templateCode": "function binarySearch(arr, target) {\n  // ここに書くコードを考えてください\n}",
-        "answer01_code": "let left = 0;\nlet right = arr.length - 1;\nwhile (left <= right) {\n  const mid = Math.floor((left + right) / 2);\n  if (arr[mid] === target) return mid;\n  if (arr[mid] < target) left = mid + 1;\n  else right = mid - 1;\n}\nreturn -1;",
-        "answer01_desc": "範囲を半分ずつ探索",
-        "answer02_code": "return arr.indexOf(target);",
-        "answer02_desc": "indexOfで線形探索",
+        "title": "Q7. 本棚から本を探す",
+        "description": "本棚に本が背表紙の高さ順に並んでいます。特定の高さの本を探す関数 `findBook` を作成してください。",
+        "templateCode": "function findBook(books, targetHeight) {\n  // ここに書くコードを考えてください\n}",
+        "answer01_code": "let left = 0;\nlet right = books.length - 1;\nwhile (left <= right) {\n  const mid = Math.floor((left + right) / 2);\n  if (books[mid] === targetHeight) return mid;\n  if (books[mid] < targetHeight) left = mid + 1;\n  else right = mid - 1;\n}\nreturn -1;",
+        "answer01_desc": "本棚を半分ずつ探す",
+        "answer02_code": "return books.indexOf(targetHeight);",
+        "answer02_desc": "順番に探す",
         "answer03_code": "",
         "answer03_desc": ""
     },
     {
-        "title": "Q8. フィボナッチ数列",
-        "description": "n番目のフィボナッチ数を返す関数 `fibonacci` を作成してください。",
-        "templateCode": "function fibonacci(n) {\n  // ここに書くコードを考えてください\n}",
-        "answer01_code": "if (n <= 1) return n;\nlet a = 0, b = 1;\nfor (let i = 2; i <= n; i++) {\n  [a, b] = [b, a + b];\n}\nreturn b;",
-        "answer01_desc": "反復で計算",
-        "answer02_code": "if (n <= 1) return n;\nreturn fibonacci(n - 1) + fibonacci(n - 2);",
+        "title": "Q8. 階段の上り方",
+        "description": "n段の階段があります。1段ずつ、または2段ずつ上ることができます。n段目までの上り方の総数を求める関数 `countWays` を作成してください。",
+        "templateCode": "function countWays(n) {\n  // ここに書くコードを考えてください\n}",
+        "answer01_code": "if (n <= 1) return 1;\nlet a = 1, b = 1;\nfor (let i = 2; i <= n; i++) {\n  [a, b] = [b, a + b];\n}\nreturn b;",
+        "answer01_desc": "順番に計算",
+        "answer02_code": "if (n <= 1) return 1;\nreturn countWays(n - 1) + countWays(n - 2);",
         "answer02_desc": "再帰で計算",
-        "answer03_code": "const memo = {};\nfunction fib(n) {\n  if (n in memo) return memo[n];\n  if (n <= 1) return n;\n  memo[n] = fib(n - 1) + fib(n - 2);\n  return memo[n];\n}\nreturn fib(n);",
-        "answer03_desc": "メモ化で最適化"
+        "answer03_code": "const memo = {};\nfunction ways(n) {\n  if (n in memo) return memo[n];\n  if (n <= 1) return 1;\n  memo[n] = ways(n - 1) + ways(n - 2);\n  return memo[n];\n}\nreturn ways(n);",
+        "answer03_desc": "計算結果を覚えておく"
     },
     {
-        "title": "Q9. 回文判定",
-        "description": "与えられた文字列が回文かどうかを判定する関数 `isPalindrome` を作成してください。",
+        "title": "Q9. 文字列の前後一致判定",
+        "description": "与えられた文字列が前から読んでも後ろから読んでも同じになるかどうかを判定する関数 `isPalindrome` を作成してください。",
         "templateCode": "function isPalindrome(str) {\n  // ここに書くコードを考えてください\n}",
         "answer01_code": "let left = 0;\nlet right = str.length - 1;\nwhile (left < right) {\n  if (str[left] !== str[right]) return false;\n  left++;\n  right--;\n}\nreturn true;",
-        "answer01_desc": "両端から比較",
+        "answer01_desc": "両端から1文字ずつ比較",
         "answer02_code": "return str === str.split('').reverse().join('');",
-        "answer02_desc": "反転して比較",
+        "answer02_desc": "文字列を反転して比較",
         "answer03_code": "const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');\nreturn cleanStr === cleanStr.split('').reverse().join('');",
-        "answer03_desc": "正規表現で前処理"
+        "answer03_desc": "記号を除いて比較"
     },
     {
         "title": "Q10. 配列の重複を削除",
@@ -108,5 +108,16 @@
         "answer02_desc": "Setで一括削除",
         "answer03_code": "return arr.filter((item, index) => arr.indexOf(item) === index);",
         "answer03_desc": "filterで重複除去"
+    },
+    {
+        "title": "Q11. 宝探し",
+        "description": "n個の部屋が一列に並んでいます。各部屋には宝の有無が記録されています。宝が隠されている部屋を全て見つける関数 `findTreasures` を作成してください。",
+        "templateCode": "function findTreasures(rooms) {\n  // ここに書くコードを考えてください\n}",
+        "answer01_code": "const result = [];\nfor (let i = 0; i < rooms.length; i++) {\n  if (rooms[i]) {\n    result.push(i);\n  }\n}\nreturn result;",
+        "answer01_desc": "順番に確認",
+        "answer02_code": "return rooms.map((hasTreasure, index) => hasTreasure ? index : -1).filter(index => index !== -1);",
+        "answer02_desc": "配列操作で一括処理",
+        "answer03_code": "",
+        "answer03_desc": ""
     }
 ]

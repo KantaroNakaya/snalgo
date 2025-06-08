@@ -11,7 +11,7 @@ const SyntaxHighlighter = dynamic(
 type AnswerCodeProps = {
     number: number;
     code: string | null | undefined;
-    description: string | null | undefined;
+    hint: string | null | undefined;
 };
 
 // HTMLタグを除去し、<br>やエスケープされたタグを改行に変換する関数
@@ -23,7 +23,7 @@ const cleanCode = (code: string | null | undefined): string => {
 export default function AnswerCode({
     number,
     code,
-    description,
+    hint,
 }: AnswerCodeProps) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +39,7 @@ export default function AnswerCode({
                     <Image src="/icon-hint.png" alt="" width={40} height={40} />
                     <span className="text-sm font-bold">ヒント</span>
                 </p>
-                <p className="pl-4 mt-4">{description}</p>
+                <p className="pl-4 mt-4">{hint}</p>
             </div>
             <button
                 onClick={() => setIsOpen(!isOpen)}

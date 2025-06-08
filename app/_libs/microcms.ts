@@ -19,10 +19,13 @@ export type Work = {
     content: string;
     templateCode: string;
     answer01_code: string;
+    answer01_hint: string;
     answer01_desc: string;
     answer02_code: string;
+    answer02_hint: string;
     answer02_desc: string;
     answer03_code: string;
+    answer03_hint: string;
     answer03_desc: string;
 } & MicroCMSListContent;
 

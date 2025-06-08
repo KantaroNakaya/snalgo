@@ -12,6 +12,7 @@ type AnswerCodeProps = {
     number: number;
     code: string | null | undefined;
     hint: string | null | undefined;
+    desc: string | null | undefined;
 };
 
 // HTMLタグを除去し、<br>やエスケープされたタグを改行に変換する関数
@@ -24,6 +25,7 @@ export default function AnswerCode({
     number,
     code,
     hint,
+    desc,
 }: AnswerCodeProps) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -57,6 +59,11 @@ export default function AnswerCode({
                 <SyntaxHighlighter language="javascript" style={tomorrow}>
                     {cleanCode(code)}
                 </SyntaxHighlighter>
+                {desc && (
+                    <div className="mb-8 border-l-4 border-primary">
+                        <p className="pl-4 mt-4">{desc}</p>
+                    </div>
+                )}
             </div>
         </div>
     );

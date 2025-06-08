@@ -1,8 +1,13 @@
 import json
 import csv
+import os
+
+# スクリプトのディレクトリパスを取得
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # JSONファイルを読み込む
-with open('work-data.json', 'r', encoding='utf-8') as json_file:
+json_path = os.path.join(script_dir, 'work-data.json')
+with open(json_path, 'r', encoding='utf-8') as json_file:
     data = json.load(json_file)
 
 # 改行を\nに変換する関数
@@ -19,13 +24,14 @@ def convert_newlines(obj):
 converted_data = convert_newlines(data)
 
 # CSVファイルに書き込む
-with open('work-data.csv', 'w', encoding='utf-8', newline='') as csv_file:
+csv_path = os.path.join(script_dir, 'work-data.csv')
+with open(csv_path, 'w', encoding='utf-8', newline='') as csv_file:
     # CSVのヘッダーを定義
     fieldnames = [
         'title', 'description', 'templateCode',
-        'answer01_code', 'answer01_desc',
-        'answer02_code', 'answer02_desc',
-        'answer03_code', 'answer03_desc'
+        'answer01_code', 'answer01_hint', 'answer01_desc',
+        'answer02_code', 'answer02_hint', 'answer02_desc',
+        'answer03_code', 'answer03_hint', 'answer03_desc'
     ]
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     

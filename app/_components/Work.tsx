@@ -72,17 +72,20 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                 <AnswerCode
                     number={1}
                     code={data.answer01_code}
-                    hint={data.answer01_desc}
+                    hint={data.answer01_hint}
+                    desc={data.answer01_desc}
                 />
                 <AnswerCode
                     number={2}
                     code={data.answer02_code}
-                    hint={data.answer02_desc}
+                    hint={data.answer02_hint}
+                    desc={data.answer02_desc}
                 />
                 <AnswerCode
                     number={3}
                     code={data.answer03_code}
-                    hint={data.answer03_desc}
+                    hint={data.answer03_hint}
+                    desc={data.answer03_desc}
                 />
             </div>
             <div className="grid grid-cols-2 gap-4 mt-8">

@@ -5,20 +5,20 @@ export const revalidate = 60;
 export default async function Home() {
     return (
         <div>
-            <section className="flex items-center justify-center overflow-hidden py-32">
+            <section className="flex items-center justify-center overflow-hidden py-40">
                 <div>
-                    <h1 className="text-5xl text-center">
-                        <span className="block font-bold mb-4 text-6xl md:text-4xl">
+                    <div className="text-center">
+                        <h1 className="block text-6xl font-bold mb-4">
                             AlgoSnap
-                        </span>
-                        <span className="block text-xl md:text-xl">
+                        </h1>
+                        <p className="block text-2xl">
                             JavaScript編
-                        </span>
-                    </h1>
+                        </p>
+                    </div>
                 </div>
             </section>
             <section>
-                <p className="max-w-3xl mx-auto px-10 py-8 text-center">
+                <p className="max-w-3xl mx-auto py-4 text-center">
                     <span className="text-2xl font-bold">
                         スマホでサクッと学べる
                     </span>

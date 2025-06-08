@@ -1,8 +1,10 @@
+"use client";
+
 import ButtonLink from "./_components/ButtonLink";
 import Image from "next/image";
-export const revalidate = 60;
+import { TypeAnimation } from "react-type-animation";
 
-export default async function Home() {
+export default function Home() {
     return (
         <div>
             <section className="flex items-center justify-center overflow-hidden py-40">
@@ -11,9 +13,7 @@ export default async function Home() {
                         <h1 className="block text-6xl font-bold mb-4">
                             AlgoSnap
                         </h1>
-                        <p className="block text-2xl">
-                            JavaScript編
-                        </p>
+                        <p className="block text-2xl">JavaScript編</p>
                     </div>
                 </div>
             </section>
@@ -27,17 +27,36 @@ export default async function Home() {
                         アルゴリズム基礎ドリル
                     </span>
                 </p>
-                <Image className="mx-auto" src="/illust.png" alt="" width={300} height={300} />
+                <Image
+                    className="mx-auto"
+                    src="/illust.png"
+                    alt=""
+                    width={300}
+                    height={300}
+                />
                 <div className="flex flex-col gap-8 max-w-xl mx-auto px-10 py-16">
-                    <p className="text-2xl font-bold">
-                        腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。
-                    </p>
-                    <p className="text-2xl font-bold">
-                        しかし、腰を据えていない時間もある。その時間を有効活用したい。
-                    </p>
-                    <p className="text-2xl font-bold">
-                        そんな時におすすめなのが、AlgoSnapです。
-                    </p>
+                    <TypeAnimation
+                        sequence={[
+                            "腰を据えてプログラムを考える。",
+                            1000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。",
+                            1000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。",
+                            1000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。",
+                            1000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。",
+                            2000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。このサイトは、スマホでサクッと学べるようになっています。",
+                            2000,
+                            "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。このサイトは、スマホでサクッと学べるようになっています。\n\nJavaスクリプトを使ってアルゴリズムを考えてみよう。",
+                            2000,
+                        ]}
+                        wrapper="p"
+                        speed={50}
+                        className="text-2xl font-bold whitespace-pre-line"
+                        repeat={0}
+                    />
                 </div>
             </section>
             <section className="flex flex-col items-center p-6">

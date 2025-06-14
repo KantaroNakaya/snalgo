@@ -17,12 +17,12 @@ export default function Home() {
                 <div>
                     <div className="text-center">
                         <h1
-                            className={`block text-6xl font-bold mb-4 ${iceland.className}`}
+                            className={`block text-7xl font-bold mb-4 ${iceland.className}`}
                         >
                             Snalgo
                         </h1>
-                        <p className="block text-2xl font-bold">
-                            スマホで取り組める学習ドリル
+                        <p className="block text-xl font-bold">
+                            スマホで取り組める<br />プログラミング学習ドリル
                         </p>
                     </div>
                 </div>

@@ -5,19 +5,17 @@ import Footer from "./_components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://algo-snap-js.vercel.app/"),
+    metadataBase: new URL("https://snalgo.vercel.app/"),
     title: {
-        template:
-            "%s | AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル",
-        default:
-            "AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル",
+        template: "%s | Snalgo（スナルゴ） 隙間時間にスマホでドリル学習しよう",
+        default: "Snalgo（スナルゴ） 隙間時間にスマホでドリル学習しよう",
     },
     description:
-        "AlgoSnap（JavaScript編）でアルゴリズムの基本を学ぼう。スマホでできるので通勤などの隙間時間にサクッとできます。",
+        "Snalgo（スナルゴ）でアルゴリズムを考える力を鍛えよう。スマホでできるので通勤などの隙間時間に片手で取り組めます。",
     openGraph: {
-        title: `%s | AlgoSnap（JavaScript編） スマホでサクッと学べるアルゴリズム基礎ドリル`,
+        title: `%s | Snalgo（スナルゴ） 隙間時間にスマホでドリル学習しよう`,
         description:
-            "AlgoSnap（JavaScript編）でアルゴリズムの基本を学ぼう。スマホでできるので通勤などの隙間時間にサクッとできます。",
+            "Snalgo（スナルゴ）でアルゴリズムを考える力を鍛えよう。スマホでできるので通勤などの隙間時間に片手で取り組めます。",
         images: ["/ogp.jpg"],
     },
     alternates: {

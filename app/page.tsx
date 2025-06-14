@@ -3,6 +3,12 @@
 import ButtonLink from "./_components/ButtonLink";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { Iceland } from "next/font/google";
+
+const iceland = Iceland({
+    weight: "400",
+    subsets: ["latin"],
+});
 
 export default function Home() {
     return (
@@ -10,21 +16,25 @@ export default function Home() {
             <section className="flex items-center justify-center overflow-hidden py-40">
                 <div>
                     <div className="text-center">
-                        <h1 className="block text-6xl font-bold mb-4">
-                            AlgoSnap
+                        <h1
+                            className={`block text-6xl font-bold mb-4 ${iceland.className}`}
+                        >
+                            Snalgo
                         </h1>
-                        <p className="block text-2xl">JavaScript編</p>
+                        <p className="block text-2xl font-bold">
+                            スマホで取り組める学習ドリル
+                        </p>
                     </div>
                 </div>
             </section>
             <section>
                 <p className="max-w-3xl mx-auto py-4 text-center">
                     <span className="text-2xl font-bold">
-                        スマホでサクッと学べる
-                    </span>
-                    <br />
-                    <span className="text-2xl font-bold">
-                        アルゴリズム基礎ドリル
+                        隙間時間を使って
+                        <br />
+                        「アルゴリズムを考える力」
+                        <br />
+                        を鍛えよう
                     </span>
                 </p>
                 <Image
@@ -42,9 +52,9 @@ export default function Home() {
                                 "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。",
                                 "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。",
                                 "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。",
-                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。",
-                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。このサイトは、スマホでサクッと学べるようになっています。",
-                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、AlgoSnapです。このサイトは、スマホでサクッと学べるようになっています。\n\nJavaScriptを使ってアルゴリズムを考えてみよう。",
+                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、「Snalgo」です。",
+                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、「Snalgo」です。このサイトは、スマホでサクッと学べるようになっています。",
+                                "腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。\n\nしかし、腰を据えていない時間もある。その時間を有効活用したい。\n\nそんな時におすすめなのが、「Snalgo」です。このサイトは、スマホでサクッと学べるようになっています。\n\nSnalgoを使ってアルゴリズムを考えてみよう。",
                             ];
 
                             return texts.flatMap((text, index) => [

@@ -4,6 +4,7 @@ import ButtonLink from "./_components/ButtonLink";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { Iceland } from "next/font/google";
+import { useState, useEffect } from "react";
 
 const iceland = Iceland({
     weight: "400",
@@ -11,6 +12,16 @@ const iceland = Iceland({
 });
 
 export default function Home() {
+    const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsAnimationComplete(true);
+        }, 15000); // アニメーションの合計時間より少し長めに設定
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div>
             <section className="flex items-center justify-center overflow-hidden py-40">
@@ -22,7 +33,9 @@ export default function Home() {
                             Snalgo
                         </h1>
                         <p className="block text-xl font-bold">
-                            スマホで取り組める<br />プログラミング学習ドリル
+                            スマホで取り組める
+                            <br />
+                            プログラミング学習ドリル
                         </p>
                     </div>
                 </div>
@@ -69,11 +82,13 @@ export default function Home() {
                     />
                 </div>
             </section>
-            <section className="flex flex-col items-center p-6">
-                <ButtonLink href="/concept">コンセプト</ButtonLink>
-                <ButtonLink href="/workbook">問題一覧</ButtonLink>
-                <ButtonLink href="/news">お知らせ一覧</ButtonLink>
-            </section>
+            {isAnimationComplete && (
+                <section className="flex flex-col items-center p-6">
+                    <ButtonLink href="/concept">コンセプト</ButtonLink>
+                    <ButtonLink href="/workbook">問題一覧</ButtonLink>
+                    <ButtonLink href="/news">お知らせ一覧</ButtonLink>
+                </section>
+            )}
         </div>
     );
 }

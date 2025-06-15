@@ -9,7 +9,7 @@ export default function Hero() {
             <p className="mb-4 text-left">▼ホーム画面に追加する方法</p>
             <div className="flex flex-col gap-4 mb-4">
                 <a
-                    className="flex items-center justify-center gap-2 bg-green-500 px-4 py-2 rounded-md"
+                    className="flex items-center justify-between gap-2 bg-green-500 px-8 py-2 rounded-md"
                     href="https://youtube.com/shorts/5z6h77x958M?si=dd_EKrmIarRyREKF"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -25,7 +25,7 @@ export default function Hero() {
                     </span>
                 </a>
                 <a
-                    className="flex items-center justify-center gap-2 bg-green-500 px-4 py-2 rounded-md"
+                    className="flex items-center justify-between gap-2 bg-green-500 px-8 py-2 rounded-md"
                     href="https://youtube.com/shorts/0pblK9BD6Ec?si=SCOVE-546iJAM-9O"
                     target="_blank"
                     rel="noopener noreferrer"

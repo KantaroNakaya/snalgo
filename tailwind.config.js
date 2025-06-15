@@ -17,10 +17,19 @@ module.exports = {
                 "border-dark": "var(--color-border-dark)",
                 "border-light": "var(--color-border-light)",
                 "button-primary": "var(--color-button-primary)",
-                "current": "var(--color-current)",
+                current: "var(--color-current)",
             },
             borderRadius: {
                 DEFAULT: "var(--border-radius)",
+            },
+            keyframes: {
+                "fade-in": {
+                    "0%": { opacity: "0" },
+                    "100%": { opacity: "1" },
+                },
+            },
+            animation: {
+                "fade-in": "fade-in 0.5s ease-out forwards",
             },
         },
     },

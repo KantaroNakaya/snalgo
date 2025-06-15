@@ -57,7 +57,7 @@ export default function Home() {
                     width={300}
                     height={300}
                 />
-                <div className="flex flex-col gap-8 max-w-xl mx-auto px-10 py-16">
+                <div className="flex flex-col gap-8 max-w-xl mx-auto px-10 py-8">
                     <TypeAnimation
                         sequence={(() => {
                             const texts = [
@@ -83,7 +83,7 @@ export default function Home() {
                 </div>
             </section>
             {isAnimationComplete && (
-                <section className="flex flex-col items-center p-6">
+                <section className="flex flex-col items-center p-6 opacity-0 animate-fade-in">
                     <ButtonLink href="/concept">コンセプト</ButtonLink>
                     <ButtonLink href="/workbook">問題一覧</ButtonLink>
                     <ButtonLink href="/news">お知らせ一覧</ButtonLink>

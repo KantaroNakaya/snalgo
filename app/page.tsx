@@ -3,6 +3,7 @@
 import TopHero from "./_components/TopHero";
 import TopMessage from "./_components/TopMessage";
 import ButtonLink from "./_components/ButtonLink";
+import Footer from "./_components/Footer";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -21,11 +22,14 @@ export default function Home() {
             <TopHero />
             <TopMessage />
             {isAnimationComplete && (
-                <section className="flex flex-col items-center p-6 opacity-0 animate-fade-in">
-                    <ButtonLink href="/concept">コンセプト</ButtonLink>
-                    <ButtonLink href="/workbook">問題一覧</ButtonLink>
-                    <ButtonLink href="/news">お知らせ一覧</ButtonLink>
-                </section>
+                <>
+                    <section className="flex flex-col items-center p-6 opacity-0 animate-fade-in">
+                        <ButtonLink href="/concept">コンセプト</ButtonLink>
+                        <ButtonLink href="/workbook">問題一覧</ButtonLink>
+                        <ButtonLink href="/news">お知らせ一覧</ButtonLink>
+                    </section>
+                    <Footer />
+                </>
             )}
         </div>
     );

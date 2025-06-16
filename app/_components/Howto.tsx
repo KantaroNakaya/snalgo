@@ -25,39 +25,37 @@ export default function Howto() {
                 </span>
             </button>
             {isOpen && (
-                <div className="flex flex-col gap-4 mb-4 pt-4">
-                    <a
-                        className="flex items-center justify-between gap-2 bg-green-500 px-8 py-2 rounded-md"
-                        href="https://youtube.com/shorts/5z6h77x958M?si=dd_EKrmIarRyREKF"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <span className="text-sm">AndroidOS版の場合</span>
-                        <span className="w-8 h-6">
+                <div>
+                    <div className="flex flex-col gap-4 mb-4 pt-4">
+                        <a
+                            className="flex items-center justify-center gap-2 px-4 py-2 underline"
+                            href="https://youtube.com/shorts/5z6h77x958M?si=dd_EKrmIarRyREKF"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className="text-sm">Androidスマホでの追加方法</span>
                             <Image
                                 src="/icon-youtube.png"
                                 alt="youtube"
-                                width={32}
-                                height={24}
+                                width={16}
+                                height={16}
                             />
-                        </span>
-                    </a>
-                    <a
-                        className="flex items-center justify-between gap-2 bg-green-500 px-8 py-2 rounded-md"
-                        href="https://youtube.com/shorts/0pblK9BD6Ec?si=SCOVE-546iJAM-9O"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <span className="text-sm">iOS版の場合</span>
-                        <span className="w-8 h-6">
+                        </a>
+                        <a
+                            className="flex items-center justify-center gap-2 px-4 py-2 underline"
+                            href="https://youtube.com/shorts/0pblK9BD6Ec?si=SCOVE-546iJAM-9O"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className="text-sm">iPhoneでの追加方法</span>
                             <Image
                                 src="/icon-youtube.png"
                                 alt="youtube"
-                                width={32}
-                                height={24}
+                                width={16}
+                                height={16}
                             />
-                        </span>
-                    </a>
+                        </a>
+                    </div>
                     <ul className="text-left text-xs leading-relaxed">
                         <li>※ リンク先はオススメのショート動画です。</li>
                         <li>※ Snalgo運営による制作動画ではありません。</li>

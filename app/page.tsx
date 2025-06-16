@@ -1,15 +1,10 @@
 "use client";
 
+import TopHero from "./_components/TopHero";
 import ButtonLink from "./_components/ButtonLink";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import { Iceland } from "next/font/google";
 import { useState, useEffect } from "react";
-
-const iceland = Iceland({
-    weight: "400",
-    subsets: ["latin"],
-});
 
 export default function Home() {
     const [isAnimationComplete, setIsAnimationComplete] = useState(false);
@@ -24,22 +19,7 @@ export default function Home() {
 
     return (
         <div>
-            <section className="flex items-center justify-center overflow-hidden py-40">
-                <div>
-                    <div className="text-center">
-                        <h1
-                            className={`block text-7xl font-bold mb-4 ${iceland.className}`}
-                        >
-                            Snalgo
-                        </h1>
-                        <p className="block text-xl font-bold">
-                            スマホで取り組める
-                            <br />
-                            プログラミング学習ドリル
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <TopHero />
             <section>
                 <p className="max-w-3xl mx-auto py-4 text-center">
                     <span className="text-2xl font-bold">

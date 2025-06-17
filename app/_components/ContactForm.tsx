@@ -30,46 +30,23 @@ export default function ContactForm() {
         );
     }
     return (
-        <form
-            action={formAction}
-            className="space-y-6"
-            onSubmit={handleSubmit}
-        >
-            <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                    <label
-                        htmlFor="lastname"
-                        className="block text-sm font-medium"
-                    >
-                        姓
-                    </label>
-                    <input
-                        type="text"
-                        id="lastname"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        name="lastname"
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label
-                        htmlFor="firstname"
-                        className="block text-sm font-medium"
-                    >
-                        名
-                    </label>
-                    <input
-                        type="text"
-                        id="firstname"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        name="firstname"
-                    />
-                </div>
-            </div>
+        <form action={formAction} className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
                 <label
-                    htmlFor="company"
+                    htmlFor="name"
                     className="block text-sm font-medium"
                 >
+                    名
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    name="name"
+                />
+            </div>
+            <div className="space-y-2">
+                <label htmlFor="company" className="block text-sm font-medium">
                     会社名
                 </label>
                 <input
@@ -80,10 +57,7 @@ export default function ContactForm() {
                 />
             </div>
             <div className="space-y-2">
-                <label
-                    htmlFor="email"
-                    className="block text-sm font-medium"
-                >
+                <label htmlFor="email" className="block text-sm font-medium">
                     メールアドレス
                 </label>
                 <input
@@ -94,10 +68,7 @@ export default function ContactForm() {
                 />
             </div>
             <div className="space-y-2">
-                <label
-                    htmlFor="message"
-                    className="block text-sm font-medium"
-                >
+                <label htmlFor="message" className="block text-sm font-medium">
                     メッセージ
                 </label>
                 <textarea

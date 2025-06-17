@@ -1,11 +1,11 @@
 "use server";
 
-function validateEmail(email: string){
+function validateEmail(email: string) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
 }
 
-export async function createContactData(_prevState: any,formData: FormData){
+export async function createContactData(_prevState: any, formData: FormData) {
     const rawFormData = {
         name: formData.get("name") as string,
         company: formData.get("company") as string,
@@ -13,24 +13,31 @@ export async function createContactData(_prevState: any,formData: FormData){
         message: formData.get("message") as string,
     };
 
-    if(!rawFormData.name){
-        return{
+    if (!rawFormData.name) {
+        return {
             status: "error",
             message: "名を入力してください",
-        }
-    };
-    if(!rawFormData.company){
-        return{
+        };
+    }
+    if (!rawFormData.company) {
+        return {
             status: "error",
             message: "会社名を入力してください",
-        }
-    };
-    if(!rawFormData.email){
-        return{
+        };
+    }
+    if (!rawFormData.email) {
+        return {
             status: "error",
             message: "メールアドレスを入力してください",
-        }
-    };
+        };
+    }
+
+    if (!validateEmail(rawFormData.email)) {
+        return {
+            status: "error",
+            message: "有効なメールアドレスを入力してください",
+        };
+    }
 
     const result = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
@@ -63,20 +70,21 @@ export async function createContactData(_prevState: any,formData: FormData){
                     },
                 ],
             }),
-        },
+        }
     );
 
-    try{
+    try {
         await result.json();
-    } catch(e){
+    } catch (e) {
         console.log(e);
-        return{
+        return {
             status: "error",
             message: "お問い合わせに失敗しました",
         };
     }
 
-    return{
-        status: "success", message: "OK"
-    }
+    return {
+        status: "success",
+        message: "OK",
+    };
 }

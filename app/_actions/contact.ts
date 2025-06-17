@@ -1,5 +1,7 @@
 "use server";
 
+import nodemailer from "nodemailer";
+
 function validateEmail(email: string) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
@@ -7,9 +9,11 @@ function validateEmail(email: string) {
 
 export async function createContactData(_prevState: any, formData: FormData) {
     const rawFormData = {
+        type: formData.get("type") as string,
         name: formData.get("name") as string,
         company: formData.get("company") as string,
         email: formData.get("email") as string,
+        inquiryType: formData.get("inquiryType") as string,
         message: formData.get("message") as string,
     };
 
@@ -19,7 +23,7 @@ export async function createContactData(_prevState: any, formData: FormData) {
             message: "名を入力してください",
         };
     }
-    if (!rawFormData.company) {
+    if (rawFormData.type === "corporate" && !rawFormData.company) {
         return {
             status: "error",
             message: "会社名を入力してください",
@@ -39,52 +43,64 @@ export async function createContactData(_prevState: any, formData: FormData) {
         };
     }
 
-    const result = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                fields: [
-                    {
-                        objectTypeId: "0-1",
-                        name: "name",
-                        value: rawFormData.name,
-                    },
-                    {
-                        objectTypeId: "0-1",
-                        name: "company",
-                        value: rawFormData.company,
-                    },
-                    {
-                        objectTypeId: "0-1",
-                        name: "email",
-                        value: rawFormData.email,
-                    },
-                    {
-                        objectTypeId: "0-1",
-                        name: "message",
-                        value: rawFormData.message,
-                    },
-                ],
-            }),
-        }
-    );
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_APP_PASSWORD,
+        },
+    });
+
+    const inquiryTypeMap = {
+        snalgo: "「Snalgo」に関するお問い合わせ",
+        serviceRequest: "サービス提供等のご依頼",
+        other: "その他",
+    };
+
+    const mailOptions = {
+        from: process.env.GMAIL_USER,
+        to: process.env.GMAIL_USER,
+        subject: `お問い合わせ: ${
+            rawFormData.type === "corporate"
+                ? rawFormData.company
+                : rawFormData.name
+        }様より`,
+        text: `
+            【お問い合わせ種別】
+            ${rawFormData.type === "corporate" ? "法人" : "個人"}
+
+            【お名前】
+            ${rawFormData.name}
+
+            【会社名】
+            ${rawFormData.type === "corporate" ? rawFormData.company : "個人"}
+
+            【メールアドレス】
+            ${rawFormData.email}
+
+            【お問い合わせ内容】
+            ${
+                inquiryTypeMap[
+                    rawFormData.inquiryType as keyof typeof inquiryTypeMap
+                ] || "未選択"
+            }
+
+            【メッセージ】
+            ${rawFormData.message}
+        `,
+    };
 
     try {
-        await result.json();
+        await transporter.sendMail(mailOptions);
+        return {
+            status: "success",
+            message: "お問い合わせを受け付けました",
+        };
     } catch (e) {
-        console.log(e);
+        console.error(e);
         return {
             status: "error",
             message: "お問い合わせに失敗しました",
         };
     }
-
-    return {
-        status: "success",
-        message: "OK",
-    };
 }

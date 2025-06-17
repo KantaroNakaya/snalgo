@@ -16,13 +16,13 @@ export default function TopMessage() {
                 </span>
             </p>
             <Image
-                className="mx-auto"
+                className="mx-auto mb-8"
                 src="/illust.png"
                 alt=""
                 width={300}
                 height={300}
             />
-            <div className="flex flex-col gap-8 max-w-xl mx-auto px-10 py-8">
+            <div className="flex flex-col gap-8 max-w-xl mx-auto px-10">
                 <TypeAnimation
                     sequence={(() => {
                         const texts = [
@@ -42,7 +42,7 @@ export default function TopMessage() {
                     })()}
                     wrapper="p"
                     speed={50}
-                    className="text-2xl font-bold whitespace-pre-line"
+                    className="min-h-[80px] pb-16 text-2xl font-bold whitespace-pre-line"
                     repeat={0}
                 />
             </div>

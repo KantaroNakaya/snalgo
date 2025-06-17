@@ -32,28 +32,53 @@ export default function ContactForm() {
     return (
         <form action={formAction} className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
-                <label
-                    htmlFor="name"
-                    className="block text-sm font-medium"
-                >
-                    名
+                <label className="block text-sm font-medium">
+                    法人/個人
                 </label>
-                <input
-                    type="text"
-                    id="name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    name="name"
-                />
+                <div className="flex items-center space-x-4">
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="type"
+                            value="corporate"
+                            className="form-radio"
+                        />
+                        <span className="ml-2">法人</span>
+                    </label>
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="type"
+                            value="individual"
+                            className="form-radio"
+                        />
+                        <span className="ml-2">個人</span>
+                    </label>
+                </div>
             </div>
             <div className="space-y-2">
                 <label htmlFor="company" className="block text-sm font-medium">
-                    会社名
+                    会社名　※法人の場合は入力必須です
                 </label>
                 <input
                     type="text"
                     id="company"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-text-sub focus:outline-none focus:ring-2 focus:ring-blue-500"
                     name="company"
+                />
+            </div>
+            <div className="space-y-2">
+                <label
+                    htmlFor="name"
+                    className="block text-sm font-medium"
+                >
+                    お名前　※フルネームでお願いします
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-text-sub focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    name="name"
                 />
             </div>
             <div className="space-y-2">
@@ -63,9 +88,43 @@ export default function ContactForm() {
                 <input
                     type="email"
                     id="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-text-sub focus:outline-none focus:ring-2 focus:ring-blue-500"
                     name="email"
                 />
+            </div>
+            <div className="space-y-2">
+                <label className="block text-sm font-medium">
+                    お問い合わせ内容
+                </label>
+                <div className="flex flex-col space-y-1">
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="inquiryType"
+                            value="snalgo"
+                            className="form-radio"
+                        />
+                        <span className="ml-2">「Snalgo」に関するお問い合わせ</span>
+                    </label>
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="inquiryType"
+                            value="serviceRequest"
+                            className="form-radio"
+                        />
+                        <span className="ml-2">サービス提供等のご依頼</span>
+                    </label>
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="inquiryType"
+                            value="other"
+                            className="form-radio"
+                        />
+                        <span className="ml-2">その他</span>
+                    </label>
+                </div>
             </div>
             <div className="space-y-2">
                 <label htmlFor="message" className="block text-sm font-medium">
@@ -73,7 +132,7 @@ export default function ContactForm() {
                 </label>
                 <textarea
                     id="message"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[150px]"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-text-sub focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[150px]"
                     name="message"
                 />
             </div>

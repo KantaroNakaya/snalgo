@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
-import ClientLayout from "@/app/_components/ClientLayout";
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://snalgo.vercel.app/"),
@@ -32,7 +33,9 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body className="bg-bg-main text-text-main min-h-screen">
-                <ClientLayout>{children}</ClientLayout>
+                <Header />
+                {children}
+                <Footer />
             </body>
             <GoogleTagManager gtmId="GTM-WK2KH6VZ" />
         </html>

@@ -19,11 +19,10 @@ export const getAvailableLanguages = () => {
     ];
 };
 
-export const getLanguageFrameworkLabel = (
-    language: string,
+export const getFrameworkLabel = (
     framework: string
 ) => {
-    return `${language} (${framework})`;
+    return `${framework}`;
 };
 
 export const frameworkSlugMap: Record<string, string> = {

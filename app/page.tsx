@@ -3,7 +3,6 @@
 import TopHero from "./_components/TopHero";
 import TopMessage from "./_components/TopMessage";
 import ButtonLink from "./_components/ButtonLink";
-import Footer from "./_components/Footer";
 
 export default function Home() {
     return (
@@ -15,7 +14,6 @@ export default function Home() {
                 <ButtonLink href="/workbook">問題一覧</ButtonLink>
                 <ButtonLink href="/news">お知らせ一覧</ButtonLink>
             </section>
-            <Footer />
         </div>
     );
 }

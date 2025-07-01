@@ -17,6 +17,8 @@ export type Work = {
     title: string;
     description: string;
     content: string;
+    language: string;
+    framework: string;
     templateCode: string;
     answer01_code: string;
     answer01_hint: string;
@@ -29,19 +31,19 @@ export type Work = {
     answer03_desc: string;
 } & MicroCMSListContent;
 
-if (!process.env.MICROCMS_SERVICE_DOMAIN) {
-    throw new Error("MICROCMS_SERVICE_DOMAIN is required");
-}
-if (!process.env.MICROCMS_API_KEY) {
-    throw new Error("MICROCMS_API_KEY is required");
-}
+const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
+const apiKey = process.env.MICROCMS_API_KEY;
 
 const client = createClient({
-    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
-    apiKey: process.env.MICROCMS_API_KEY,
+    serviceDomain: serviceDomain || "dummy-domain",
+    apiKey: apiKey || "dummy-key",
 });
 
 export const getNewsList = async (queries?: MicroCMSQueries) => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const listData = await client.getList<News>({
         endpoint: "news",
         queries,
@@ -50,6 +52,10 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
 };
 
 export const getWorkList = async (queries?: MicroCMSQueries) => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const listData = await client.getList<Work>({
         endpoint: "workbook",
         queries,
@@ -61,6 +67,10 @@ export const getNewsDetail = async (
     contentId: string,
     queries?: MicroCMSQueries
 ) => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const detailData = await client.getListDetail<News>({
         endpoint: "news",
         contentId,
@@ -78,6 +88,10 @@ export const getWorkDetail = async (
     contentId: string,
     queries?: MicroCMSQueries
 ) => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const detailData = await client.getListDetail<Work>({
         endpoint: "workbook",
         contentId,
@@ -92,6 +106,10 @@ export const getWorkDetail = async (
 };
 
 export const getAllNewsList = async () => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const listData = await client.getAllContents<News>({
         endpoint: "news",
     });
@@ -99,6 +117,10 @@ export const getAllNewsList = async () => {
 };
 
 export const getAllWorkList = async () => {
+    if (!serviceDomain || !apiKey) {
+        throw new Error("MicroCMS credentials are not configured");
+    }
+
     const listData = await client.getAllContents<Work>({
         endpoint: "workbook",
     });

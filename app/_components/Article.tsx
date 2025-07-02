@@ -8,17 +8,11 @@ type Props = {
 export default function Article({ data }: Props) {
     return (
         <main>
-            <div className="mb-6">
+            <div className="mb-16">
                 <h1 className="text-2xl font-bold">{data.title}</h1>
                 <Date date={data.publishedAt ?? data.createdAt} />
             </div>
-            <p className="mb-4">{data.description}</p>
-            <div
-                className="prose max-w-none"
-                dangerouslySetInnerHTML={{
-                    __html: data.content ?? "",
-                }}
-            ></div>
+            <p className="mb-16">{data.description}</p>
         </main>
     );
 }

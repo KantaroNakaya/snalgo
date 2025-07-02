@@ -13,13 +13,13 @@ export default function NewsList({ news }: Props) {
     return (
         <ul className="space-y-4 mt-10">
             {news.map((article) => (
-                <li key={article.id} className="border-b border-gray-200 pb-4">
+                <li key={article.id} className="border border-gray-200 p-4">
                     <Link
                         href={`/news/${article.id}`}
-                        className="block hover:bg-gray-90 p-4 rounded-lg transition-colors"
+                        className="block hover:bg-gray-90 rounded-lg transition-colors"
                     >
                         <dl>
-                            <dt className="text-xl font-bold mb-2">
+                            <dt className="text-xl font-bold">
                                 {article.title}
                             </dt>
                             <dd>

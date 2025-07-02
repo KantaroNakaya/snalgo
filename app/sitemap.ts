@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllNewsList } from "./_libs/microcms";
 
-const buildurl = (path?: string) => `http://localhost:3000${path ?? ""}`;
+const buildurl = (path?: string) => `https://snalgo.com${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap>{
     const newsContents = await getAllNewsList();

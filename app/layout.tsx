@@ -5,7 +5,7 @@ import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://snalgo.vercel.app/"),
+    metadataBase: new URL("https://snalgo.com"),
     title: {
         template:
             "%s | Snalgo（スナルゴ） 隙間時間にスマホでプログラミング学習をしよう",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         images: ["/ogp.jpg"],
     },
     alternates: {
-        canonical: `http://localhost:3000`,
+        canonical: `https://snalgo.com`,
     },
 };
 
@@ -37,7 +37,7 @@ export default function RootLayout({
                 {children}
                 <Footer />
             </body>
-            <GoogleTagManager gtmId="GTM-WK2KH6VZ" />
+            <GoogleTagManager gtmId="GTM-N337R7JC" />
         </html>
     );
 }

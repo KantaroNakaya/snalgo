@@ -27,9 +27,15 @@ module.exports = {
                     "0%": { opacity: "0" },
                     "100%": { opacity: "1" },
                 },
+                "head-wiggle": {
+                    "0%, 100%": { transform: "rotate(0deg)" },
+                    "25%": { transform: "rotate(-5deg)" },
+                    "75%": { transform: "rotate(5deg)" },
+                },
             },
             animation: {
                 "fade-in": "fade-in 0.5s ease-out forwards",
+                "head-wiggle": "head-wiggle 2s ease-in-out infinite",
             },
         },
     },

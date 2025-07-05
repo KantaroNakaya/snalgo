@@ -13,16 +13,22 @@ export default function TopMessage() {
                 </span>
             </p>
             <Image
-                className="mx-auto mb-8"
+                className="mx-auto mb-8 animate-head-wiggle"
                 src="/illust.png"
                 alt=""
                 width={300}
                 height={300}
             />
             <div className="flex flex-col gap-8 max-w-xl mx-auto mb-8 px-10 text-2xl font-bold">
-                <p>腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。</p>
-                <p>しかし、腰を据えていない時間もある。その時間を有効活用したい。そんな時におすすめなのが、「Snalgo」です。</p>
-                <p>このサイトは、スマホでサクッと学べるようになっています。Snalgoを使ってアルゴリズムを考えてみよう。</p>
+                <p>
+                    腰を据えてプログラムを考える。もちろんそれは大事なことであり、欠かせないことである。
+                </p>
+                <p>
+                    しかし、腰を据えていない時間もある。その時間を有効活用したい。そんな時におすすめなのが、「Snalgo」です。
+                </p>
+                <p>
+                    このサイトは、スマホでサクッと学べるようになっています。Snalgoを使ってアルゴリズムを考えてみよう。
+                </p>
             </div>
         </section>
     );

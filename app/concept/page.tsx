@@ -1,6 +1,19 @@
+"use client";
+
 import ButtonLink from "@/app/_components/ButtonLink";
+import { useState } from "react";
 
 export default function Page() {
+    const [openSections, setOpenSections] = useState<number[]>([]);
+
+    const toggleSection = (index: number) => {
+        setOpenSections((prev) =>
+            prev.includes(index)
+                ? prev.filter((i) => i !== index)
+                : [...prev, index]
+        );
+    };
+
     const content = [
         {
             title: "サービスコンセプト",
@@ -47,14 +60,26 @@ export default function Page() {
         <div className="max-w-2xl mx-auto">
             {content.map((section, index) => (
                 <section key={index} className="mb-20">
-                    <h2 className="mb-8 p-2 bg-bg-sub text-text-sub text-2xl font-bold text-center rounded-lg">
-                        {section.title}
-                    </h2>
-                    <ul className="flex flex-col gap-8 mb-10 text-xl font-bold">
-                        {section.items.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                        ))}
-                    </ul>
+                    <button
+                        onClick={() => toggleSection(index)}
+                        className="w-full mb-8 p-2 bg-bg-sub text-text-sub text-2xl font-bold text-center rounded-lg flex items-center justify-between"
+                    >
+                        <span>{section.title}</span>
+                        <span
+                            className={`transform transition-transform ${
+                                openSections.includes(index) ? "rotate-180" : ""
+                            }`}
+                        >
+                            ▼
+                        </span>
+                    </button>
+                    {openSections.includes(index) && (
+                        <ul className="flex flex-col gap-8 mb-10 text-xl font-bold">
+                            {section.items.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                    )}
                 </section>
             ))}
             <ButtonLink href="/workbook">問題一覧へ</ButtonLink>

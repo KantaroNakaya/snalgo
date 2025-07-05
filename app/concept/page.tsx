@@ -59,12 +59,12 @@ export default function Page() {
     return (
         <div className="max-w-2xl mx-auto">
             {content.map((section, index) => (
-                <section key={index} className="mb-20">
+                <section key={index} className="mb-4">
                     <button
                         onClick={() => toggleSection(index)}
-                        className="w-full mb-8 p-2 bg-bg-sub text-text-sub text-2xl font-bold text-center rounded-lg flex items-center justify-between"
+                        className="w-full mb-8 p-2 bg-bg-sub text-text-sub text-xl font-bold text-center rounded-lg flex items-center justify-between"
                     >
-                        <span>{section.title}</span>
+                        <h2>{section.title}</h2>
                         <span
                             className={`transform transition-transform ${
                                 openSections.includes(index) ? "rotate-180" : ""

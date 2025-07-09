@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     },
     description:
         "Snalgo（スナルゴ）でアルゴリズムを考える力を鍛えよう。スマホでできるので通勤などの隙間時間に片手で取り組めます。",
+    robots: {
+        index: true,
+        follow: true,
+    },
     openGraph: {
         title: `%s | Snalgo（スナルゴ） 隙間時間にスマホでプログラミング学習をしよう`,
         description:

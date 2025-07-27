@@ -4,6 +4,8 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import { getNewsDetail } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 type Props ={
     params: {
         slug: string;

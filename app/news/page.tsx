@@ -4,6 +4,8 @@ import { NEWS_LIST_LIMIT } from "@/app/_constants";
 import Pagination from "@/app/_components/Pagination";
 import Hero from "@/app/_components/Hero";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
     const { contents: news, totalCount } = await getNewsList({
         limit: NEWS_LIST_LIMIT,

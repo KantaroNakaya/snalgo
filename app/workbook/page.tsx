@@ -1,17 +1,11 @@
-import { getWorkList } from "@/app/_libs/microcms";
-import WorkList from "@/app/_components/WorkList";
 import Hero from "@/app/_components/Hero";
 import Howto from "@/app/_components/Howto";
 import FrameworkNavigation from "@/app/_components/FrameworkNavigation";
-import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
 
 export const revalidate = 60; // 60秒ごとに再検証
 
 export default async function Page() {
     try {
-        const { contents: workbook, totalCount } = await getWorkList({
-            limit: 100,
-        });
 
         return (
             <>

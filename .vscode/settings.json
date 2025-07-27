@@ -3,8 +3,8 @@
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
     "editor.codeActionsOnSave": {
-        "source.fixAll": false,
-        "source.organizeImports": false
+        "source.fixAll": "never",
+        "source.organizeImports": "never"
     },
     "typescript.preferences.quoteStyle": "double",
     "javascript.preferences.quoteStyle": "double",

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Howto() {
@@ -27,7 +28,7 @@ export default function Howto() {
             {isOpen && (
                 <div>
                     <div className="flex flex-col gap-4 mb-4 pt-4">
-                        <a
+                        <Link
                             className="flex items-center justify-center gap-2 px-4 py-2 underline"
                             href="https://youtube.com/shorts/5z6h77x958M?si=dd_EKrmIarRyREKF"
                             target="_blank"
@@ -40,8 +41,8 @@ export default function Howto() {
                                 width={16}
                                 height={16}
                             />
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="flex items-center justify-center gap-2 px-4 py-2 underline"
                             href="https://youtube.com/shorts/0pblK9BD6Ec?si=SCOVE-546iJAM-9O"
                             target="_blank"
@@ -54,7 +55,7 @@ export default function Howto() {
                                 width={16}
                                 height={16}
                             />
-                        </a>
+                        </Link>
                     </div>
                     <ul className="text-left text-xs leading-relaxed">
                         <li>※ リンク先はオススメのショート動画です。</li>

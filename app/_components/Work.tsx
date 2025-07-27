@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { Work } from "@/app/_libs/microcms";
 import dynamic from "next/dynamic";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -98,12 +99,12 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
             </div>
             <div className="grid grid-cols-2 gap-4 mt-8">
                 {prevWorkId ? (
-                    <a
+                    <Link
                         href={`/workbook/${prevWorkId}`}
                         className="bg-blue-700 hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
                         <span className="text-sm text-white">前の問題</span>
-                    </a>
+                    </Link>
                 ) : (
                     <p className="bg-gray-500 cursor-not-allowed transition-all duration-300 text-center py-2">
                         <span className="text-sm text-white line-through">
@@ -112,12 +113,12 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
                     </p>
                 )}
                 {nextWorkId ? (
-                    <a
+                    <Link
                         href={`/workbook/${nextWorkId}`}
                         className="bg-blue-700 hover:bg-opacity-80 transition-all duration-300 text-center py-2"
                     >
                         <span className="text-sm text-white">次の問題</span>
-                    </a>
+                    </Link>
                 ) : (
                     <p className="bg-gray-500 cursor-not-allowed transition-all duration-300 text-center py-2">
                         <span className="text-sm text-white line-through">

@@ -11,7 +11,7 @@ export default function FrameworkNavigation() {
     return (
         <div className="mb-16 border border-gray-200 p-4 rounded-md">
             <h3 className="text-lg md:text-center font-semibold text-text-primary mb-4">
-                フレームワークを選択
+                言語またはフレームワークを選択
             </h3>
             <div className="grid grid-cols-1 md:text-center gap-4">
                 {availableLanguages.map((lang) => (

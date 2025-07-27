@@ -1,19 +1,7 @@
-"use client";
-
 import ButtonLink from "@/app/_components/ButtonLink";
-import { useState } from "react";
+import ConceptAccordion from "@/app/_components/ConceptAccordion";
 
 export default function Page() {
-    const [openSections, setOpenSections] = useState<number[]>([]);
-
-    const toggleSection = (index: number) => {
-        setOpenSections((prev) =>
-            prev.includes(index)
-                ? prev.filter((i) => i !== index)
-                : [...prev, index]
-        );
-    };
-
     const content = [
         {
             title: "サービスコンセプト",
@@ -59,28 +47,12 @@ export default function Page() {
     return (
         <div className="max-w-2xl mx-auto">
             {content.map((section, index) => (
-                <section key={index} className="mb-4">
-                    <button
-                        onClick={() => toggleSection(index)}
-                        className="w-full mb-8 p-2 bg-bg-sub text-text-sub text-xl font-bold text-center rounded-lg flex items-center justify-between"
-                    >
-                        <h2>{section.title}</h2>
-                        <span
-                            className={`transform transition-transform ${
-                                openSections.includes(index) ? "rotate-180" : ""
-                            }`}
-                        >
-                            ▼
-                        </span>
-                    </button>
-                    {openSections.includes(index) && (
-                        <ul className="flex flex-col gap-8 mb-10 text-xl font-bold">
-                            {section.items.map((item, idx) => (
-                                <li key={idx}>{item}</li>
-                            ))}
-                        </ul>
-                    )}
-                </section>
+                <ConceptAccordion
+                    key={index}
+                    title={section.title}
+                    items={section.items}
+                    index={index}
+                />
             ))}
             <ButtonLink href="/workbook">問題一覧へ</ButtonLink>
         </div>

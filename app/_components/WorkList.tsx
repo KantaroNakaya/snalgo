@@ -15,7 +15,7 @@ export default function Workbook({ workbook }: Props) {
                 <li key={work.id} className="border border-gray-200">
                     <Link
                         href={`/workbook/${work.id}`}
-                        className="block p-4 rounded-lg transition-colors hover:bg-gray-50 hover:text-[var(--color-text-sub)]"
+                        className="block p-4 transition-colors hover:bg-gray-50 hover:text-[var(--color-text-sub)]"
                     >
                         <dl>
                             <dd className="text-m">{work.title}</dd>

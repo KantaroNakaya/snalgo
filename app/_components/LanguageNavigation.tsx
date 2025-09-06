@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAvailableLanguages, languageToSlug } from "@/app/_libs/utils";
 import { usePathname } from "next/navigation";
 
-export default function FrameworkNavigation() {
+export default function LanguageNavigation() {
     const pathname = usePathname();
     const availableLanguages = getAvailableLanguages();
 
@@ -14,12 +14,12 @@ export default function FrameworkNavigation() {
                 言語を選択
             </h3>
             <div className="grid grid-cols-1 md:text-center gap-4">
-                {availableLanguages.map((lang) => {
-                    const slug = languageToSlug(lang.language);
+                {availableLanguages.map((language) => {
+                    const slug = languageToSlug(language);
                     const isActive = pathname === `/workbook/language/${slug}`;
                     return (
                         <Link
-                            key={lang.language}
+                            key={language}
                             href={`/workbook/language/${slug}`}
                             className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                                 isActive
@@ -27,7 +27,7 @@ export default function FrameworkNavigation() {
                                     : "hover:bg-gray-50 border border-transparent"
                             }`}
                         >
-                            {lang.language}
+                            {language}
                         </Link>
                     );
                 })}

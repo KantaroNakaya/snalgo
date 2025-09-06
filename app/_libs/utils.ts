@@ -10,14 +10,7 @@ export const formatDate = (date: string) => {
 };
 
 export const getAvailableLanguages = () => {
-    return [
-        {
-            language: "JavaScript",
-            frameworks: ["JavaScript"],
-        },
-        { language: "PHP", frameworks: ["PHP"] },
-        { language: "Python", frameworks: ["Python"] },
-    ];
+    return ["JavaScript", "PHP", "Python"];
 };
 
 

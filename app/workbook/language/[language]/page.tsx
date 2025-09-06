@@ -2,7 +2,7 @@ import { getWorkList } from "@/app/_libs/microcms";
 import WorkList from "@/app/_components/WorkList";
 import Pagination from "@/app/_components/Pagination";
 import Hero from "@/app/_components/Hero";
-import FrameworkNavigation from "@/app/_components/FrameworkNavigation";
+import LanguageNavigation from "@/app/_components/LanguageNavigation";
 import { slugToLanguage } from "@/app/_libs/utils";
 import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
 
@@ -55,7 +55,7 @@ export default async function LanguagePage({ params, searchParams }: Props) {
                 <Hero title="Workbook" sub="ワークブック" />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <FrameworkNavigation />
+                    <LanguageNavigation />
 
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-text-primary mb-4">
@@ -107,7 +107,7 @@ export default async function LanguagePage({ params, searchParams }: Props) {
                             <strong>エラー:</strong> データの取得に失敗しました。しばらく時間をおいて再度お試しください。
                         </div>
                     </div>
-                    <FrameworkNavigation />
+                    <LanguageNavigation />
                 </div>
             </>
         );

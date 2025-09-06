@@ -1,6 +1,6 @@
 import Hero from "@/app/_components/Hero";
 import Howto from "@/app/_components/Howto";
-import FrameworkNavigation from "@/app/_components/FrameworkNavigation";
+import LanguageNavigation from "@/app/_components/LanguageNavigation";
 
 export const revalidate = 60; // 60秒ごとに再検証
 
@@ -13,7 +13,7 @@ export default async function Page() {
                 <Howto />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <FrameworkNavigation />
+                    <LanguageNavigation />
                 </div>
             </>
         );
@@ -28,7 +28,7 @@ export default async function Page() {
                             <strong>エラー:</strong> データの取得に失敗しました。しばらく時間をおいて再度お試しください。
                         </div>
                     </div>
-                    <FrameworkNavigation />
+                    <LanguageNavigation />
                 </div>
             </>
         );

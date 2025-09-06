@@ -1,26 +1,5 @@
 import Link from "next/link";
-
-// ローカルでWork型を定義
-interface Work {
-    id: string;
-    title: string;
-    description: string;
-    content: string;
-    language: string;
-    framework: string;
-    templateCode: string;
-    answer01_code: string;
-    answer01_hint: string;
-    answer01_desc: string;
-    answer02_code: string;
-    answer02_hint: string;
-    answer02_desc: string;
-    answer03_code: string;
-    answer03_hint: string;
-    answer03_desc: string;
-    createdAt: string;
-    updatedAt: string;
-}
+import type { Work } from "@/app/_libs/microcms";
 
 type Props = {
     workbook: Work[];

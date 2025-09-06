@@ -16,6 +16,7 @@ export const getAvailableLanguages = () => {
             frameworks: ["JavaScript"],
         },
         { language: "PHP", frameworks: ["PHP"] },
+        { language: "Python", frameworks: ["Python"] },
     ];
 };
 
@@ -23,6 +24,7 @@ export const getAvailableLanguages = () => {
 export const languageSlugMap: Record<string, string> = {
     "JavaScript": "javascript",
     "PHP": "php",
+    "Python": "python",
 };
 
 export function languageToSlug(language: string): string {

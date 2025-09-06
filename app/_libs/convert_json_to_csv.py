@@ -47,7 +47,7 @@ for json_path in json_files:
     with open(csv_path, 'w', encoding='utf-8', newline='') as csv_file:
         # CSVのヘッダーを定義
         fieldnames = [
-            'contentId', 'language', 'framework', 'title', 'description', 'templateCode',
+            'contentId', 'language', 'title', 'description', 'templateCode',
             'answer01_code', 'answer01_hint', 'answer01_desc',
             'answer02_code', 'answer02_hint', 'answer02_desc',
             'answer03_code', 'answer03_hint', 'answer03_desc'

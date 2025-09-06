@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllNewsList } from './_libs/microcms';
-import { frameworkSlugMap } from './_libs/utils';
+import { languageSlugMap } from './_libs/utils';
 
 const buildurl = (path?: string) => `https://snalgo.com${path ?? ''}`;
 
@@ -12,11 +12,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: content.revisedAt,
     }));
 
-    // フレームワークページのURLを生成
-    const frameworkUrls: MetadataRoute.Sitemap = Object.values(
-        frameworkSlugMap
+    // 言語ページのURLを生成
+    const languageUrls: MetadataRoute.Sitemap = Object.values(
+        languageSlugMap
     ).map((slug) => ({
-        url: buildurl(`/workbook/framework/${slug}`),
+        url: buildurl(`/workbook/language/${slug}`),
         lastModified: new Date(),
     }));
 
@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: buildurl('/contact'),
             lastModified: now,
         },
-        ...frameworkUrls,
+        ...languageUrls,
         ...newsUrls,
     ];
 }

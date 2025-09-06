@@ -7,7 +7,6 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useEffect, useState } from "react";
 import AnswerCode from "./AnswerCode";
 import Accordion from "./Accordion";
-import { getFrameworkLabel } from "@/app/_libs/utils";
 
 const SyntaxHighlighter = dynamic(
     () => import("react-syntax-highlighter").then((mod) => mod.Prism),
@@ -40,11 +39,9 @@ export default function Work({ data, prevWorkId, nextWorkId }: Props) {
     return (
         <main className="max-w-xl mx-auto">
             <p className="text-xl font-bold mb-2">
-                {getFrameworkLabel(
-                    Array.isArray(data.framework)
-                        ? data.framework[0]
-                        : data.framework
-                )}
+                {Array.isArray(data.language)
+                    ? data.language[0]
+                    : data.language}
             </p>
             <h1 className="text-xl font-bold mb-8">{data.title}</h1>
             <div className="mb-16">

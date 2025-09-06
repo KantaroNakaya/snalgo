@@ -3,24 +3,24 @@ import WorkList from "@/app/_components/WorkList";
 import Pagination from "@/app/_components/Pagination";
 import Hero from "@/app/_components/Hero";
 import FrameworkNavigation from "@/app/_components/FrameworkNavigation";
-import { slugToFramework } from "@/app/_libs/utils";
+import { slugToLanguage } from "@/app/_libs/utils";
 import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
 
 export const revalidate = 60; // 60秒ごとに再検証
 
 type Props = {
     params: {
-        framework: string;
+        language: string;
     };
     searchParams: {
         page?: string;
     };
 };
 
-export default async function FrameworkPage({ params, searchParams }: Props) {
+export default async function LanguagePage({ params, searchParams }: Props) {
     try {
-        // URLのスラッグをMicroCMSの値に変換
-        const framework = slugToFramework(decodeURIComponent(params.framework));
+        // URLのスラッグを言語名に変換
+        const language = slugToLanguage(decodeURIComponent(params.language));
         
         // 現在のページを取得
         const currentPage = searchParams.page ? parseInt(searchParams.page, 10) : 1;
@@ -30,13 +30,19 @@ export default async function FrameworkPage({ params, searchParams }: Props) {
             limit: 100,
         });
 
-        // フレームワークでフィルタリング
+        // 言語でフィルタリング
         const filteredWorkbook = allWorkbook.filter((work) => {
-            if (Array.isArray(work.framework)) {
-                return work.framework.includes(framework);
+            if (Array.isArray(work.language)) {
+                return work.language.includes(language);
             }
-            return work.framework === framework;
+            return work.language === language;
         });
+
+        // デバッグ用ログ
+        console.log('Language:', language);
+        console.log('All workbook count:', allWorkbook.length);
+        console.log('Filtered workbook count:', filteredWorkbook.length);
+        console.log('Available languages:', [...new Set(allWorkbook.map(w => w.language))]);
 
         // ページネーション処理
         const totalPages = Math.ceil(filteredWorkbook.length / WORKBOOK_LIST_LIMIT);
@@ -53,7 +59,7 @@ export default async function FrameworkPage({ params, searchParams }: Props) {
 
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-text-primary mb-4">
-                            {framework} <br />
+                            {language} <br />
                             の問題一覧
                         </h2>
                         {filteredWorkbook.length > 0 && (
@@ -74,8 +80,8 @@ export default async function FrameworkPage({ params, searchParams }: Props) {
                                     totalCount={filteredWorkbook.length}
                                     currentPage={currentPage}
                                     perPage={WORKBOOK_LIST_LIMIT}
-                                    basePath={`/workbook/framework/${encodeURIComponent(
-                                        framework
+                                    basePath={`/workbook/language/${encodeURIComponent(
+                                        language
                                     )}`}
                                 />
                             )}
@@ -83,7 +89,7 @@ export default async function FrameworkPage({ params, searchParams }: Props) {
                     ) : (
                         <div className="text-center py-20">
                             <div className="text-lg text-text-primary mb-4">
-                                {`${framework} の問題が見つかりませんでした`}
+                                {`${language} の問題が見つかりませんでした`}
                             </div>
                         </div>
                     )}

@@ -13,33 +13,26 @@ export const getAvailableLanguages = () => {
     return [
         {
             language: "JavaScript",
-            frameworks: ["JavaScript(Vanilla)", "React"],
+            frameworks: ["JavaScript"],
         },
-        { language: "PHP", frameworks: ["PHP(Vanilla)", "Laravel"] },
+        { language: "PHP", frameworks: ["PHP"] },
     ];
 };
 
-export const getFrameworkLabel = (
-    framework: string
-) => {
-    return `${framework}`;
+
+export const languageSlugMap: Record<string, string> = {
+    "JavaScript": "javascript",
+    "PHP": "php",
 };
 
-export const frameworkSlugMap: Record<string, string> = {
-    "JavaScript(Vanilla)": "javascript-vanilla",
-    React: "react",
-    Laravel: "laravel",
-    "PHP(Vanilla)": "php-vanilla",
-};
-
-export function frameworkToSlug(framework: string): string {
+export function languageToSlug(language: string): string {
     return (
-        frameworkSlugMap[framework] ||
-        framework.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+        languageSlugMap[language] ||
+        language.toLowerCase().replace(/[^a-z0-9]+/g, "-")
     );
 }
 
-export function slugToFramework(slug: string): string {
-    const entry = Object.entries(frameworkSlugMap).find(([, v]) => v === slug);
+export function slugToLanguage(slug: string): string {
+    const entry = Object.entries(languageSlugMap).find(([, v]) => v === slug);
     return entry ? entry[0] : slug;
 }

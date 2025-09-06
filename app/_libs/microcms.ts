@@ -18,7 +18,6 @@ export type Work = {
     description: string;
     content: string;
     language: string;
-    framework: string;
     templateCode: string;
     answer01_code: string;
     answer01_hint: string;

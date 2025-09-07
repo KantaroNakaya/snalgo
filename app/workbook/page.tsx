@@ -1,11 +1,18 @@
 import Hero from "@/app/_components/Hero";
 import Howto from "@/app/_components/Howto";
 import LanguageNavigation from "@/app/_components/LanguageNavigation";
+import { getWorkList } from "@/app/_libs/microcms";
+import WorkList from "@/app/_components/WorkList";
+import Pagination from "@/app/_components/Pagination";
+import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
 
 export const revalidate = 60; // 60秒ごとに再検証
 
 export default async function Page() {
     try {
+        const { contents: work, totalCount } = await getWorkList({
+            limit: WORKBOOK_LIST_LIMIT,
+        });
 
         return (
             <>
@@ -14,6 +21,13 @@ export default async function Page() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <LanguageNavigation />
+                    <WorkList workbook={work} />
+                    <Pagination
+                        totalCount={totalCount}
+                        currentPage={1}
+                        perPage={WORKBOOK_LIST_LIMIT}
+                        basePath="/workbook"
+                    />
                 </div>
             </>
         );

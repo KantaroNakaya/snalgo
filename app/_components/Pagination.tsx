@@ -48,7 +48,7 @@ export default function Pagination({
                         </button>
                     ) : (
                         <Link
-                            href={page === 1 ? basePath : `${basePath}?page=${page}`}
+                            href={page === 1 ? basePath : `${basePath}/page/${page}`}
                             className={`block w-10 h-10 leading-10 text-center border rounded ${
                                 currentPage === page
                                     ? "bg-gray-900 text-white"

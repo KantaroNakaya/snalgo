@@ -5,30 +5,27 @@ import Hero from "@/app/_components/Hero";
 import LanguageNavigation from "@/app/_components/LanguageNavigation";
 import { slugToLanguage } from "@/app/_libs/utils";
 import { WORKBOOK_LIST_LIMIT } from "@/app/_constants";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export const revalidate = 60; // 60秒ごとに再検証
 
 type Props = {
     params: {
         language: string;
-    };
-    searchParams: {
-        page?: string;
+        current: string;
     };
 };
 
-export default async function LanguagePage({ params, searchParams }: Props) {
+export default async function LanguagePageWithPagination({ params }: Props) {
     try {
         // URLのスラッグを言語名に変換
         const language = slugToLanguage(decodeURIComponent(params.language));
         
         // 現在のページを取得
-        const currentPage = searchParams.page ? parseInt(searchParams.page, 10) : 1;
+        const currentPage = parseInt(params.current, 10);
         
-        // 2ページ目以降の場合は動的ルーティングにリダイレクト
-        if (currentPage > 1) {
-            redirect(`/workbook/language/${encodeURIComponent(language)}/page/${currentPage}`);
+        if (Number.isNaN(currentPage) || currentPage < 1) {
+            notFound();
         }
         
         // 全データを取得
@@ -44,17 +41,15 @@ export default async function LanguagePage({ params, searchParams }: Props) {
             return work.language === language;
         });
 
-        // デバッグ用ログ
-        console.log('Language:', language);
-        console.log('All workbook count:', allWorkbook.length);
-        console.log('Filtered workbook count:', filteredWorkbook.length);
-        console.log('Available languages:', [...new Set(allWorkbook.map(w => w.language))]);
-
         // ページネーション処理
         const totalPages = Math.ceil(filteredWorkbook.length / WORKBOOK_LIST_LIMIT);
         const startIndex = (currentPage - 1) * WORKBOOK_LIST_LIMIT;
         const endIndex = startIndex + WORKBOOK_LIST_LIMIT;
         const currentPageData = filteredWorkbook.slice(startIndex, endIndex);
+
+        if (currentPageData.length === 0) {
+            notFound();
+        }
 
         return (
             <>
@@ -78,26 +73,16 @@ export default async function LanguagePage({ params, searchParams }: Props) {
                         )}
                     </div>
 
-                    {currentPageData.length > 0 ? (
-                        <>
-                            <WorkList workbook={currentPageData} />
-                            {totalPages > 1 && (
-                                <Pagination
-                                    totalCount={filteredWorkbook.length}
-                                    currentPage={currentPage}
-                                    perPage={WORKBOOK_LIST_LIMIT}
-                                    basePath={`/workbook/language/${encodeURIComponent(
-                                        language
-                                    )}`}
-                                />
-                            )}
-                        </>
-                    ) : (
-                        <div className="text-center py-20">
-                            <div className="text-lg text-text-primary mb-4">
-                                {`${language} の問題が見つかりませんでした`}
-                            </div>
-                        </div>
+                    <WorkList workbook={currentPageData} />
+                    {totalPages > 1 && (
+                        <Pagination
+                            totalCount={filteredWorkbook.length}
+                            currentPage={currentPage}
+                            perPage={WORKBOOK_LIST_LIMIT}
+                            basePath={`/workbook/language/${encodeURIComponent(
+                                language
+                            )}`}
+                        />
                     )}
                 </div>
             </>

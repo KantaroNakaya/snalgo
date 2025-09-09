@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         follow: true,
     },
     openGraph: {
-        title: `%s | Snalgo（スナルゴ） 隙間時間にスマホでプログラミング学習をしよう`,
+        title: "Snalgo（スナルゴ） 隙間時間にスマホでプログラミング学習をしよう",
         description:
             "Snalgo（スナルゴ）でアルゴリズムを考える力を鍛えよう。スマホでできるので通勤などの隙間時間に片手で取り組めます。",
         images: ["/ogp.jpg"],
